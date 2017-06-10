@@ -1,0 +1,4 @@
+affiliate_show:
+    path:     /{id}/show
+    defaults: { _controller: "ParkimeterAffiliatesAffiliateBundle:Get:show" }
+    methods:  GET
