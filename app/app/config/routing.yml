@@ -1,0 +1,2 @@
+parkimeter_affiliates_affiliate:
+    resource: "@ParkimeterAffiliatesAffiliateBundle/Resources/config/routing.yml"

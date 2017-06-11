@@ -1,0 +1,30 @@
+ParkimeterAffiliates\Affiliate\Domain\Model\Affiliate:
+    type: entity
+    table: affiliate
+    repositoryClass: ParkimeterAffiliates\Affiliate\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository
+    id:
+        id:
+            type: integer
+            column: affiliate_id
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        lastName:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        createdAt:
+            type: datetime
+            column: created_at
+        updatedAt:
+            type: datetime
+            column: updated_at
+    lifecycleCallbacks:
+        prePersist: [ updatedTimestamps ]
+

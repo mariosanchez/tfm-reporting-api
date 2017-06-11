@@ -1,0 +1,20 @@
+imports:
+    - {resource: '../../../../../../src/Affiliate/Infrastructure/DependencyInjection/Symfony/services.yml'}
+
+services:
+
+  ParkimeterAffiliates\AffiliateBundle\Controller\GetController:
+    class: ParkimeterAffiliates\AffiliateBundle\Controller\GetController
+    arguments:
+      - '@service_container'
+      - '@ParkimeterAffiliates\Affiliate\Application\Service\GetAffiliateService'
+
+doctrine:
+  orm:
+    mappings:
+      Affiliate:
+        mapping: true
+        type: yml
+        dir: '%kernel.root_dir%/../../src/Affiliate/Infrastructure/Persistance/Repository/Doctrine/Mapping'
+        prefix: 'ParkimeterAffiliates\Affiliate\Domain\Model'
+        is_bundle: false
