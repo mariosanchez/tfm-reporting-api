@@ -141,4 +141,3 @@ class Affiliate
         $this->setUpdatedAt(new \DateTime('now'));
     }
 }
-

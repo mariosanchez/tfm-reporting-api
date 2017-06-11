@@ -51,7 +51,7 @@ class GetController extends Controller
         ]);
 
         $response = new Response();
-        $response->setContent(json_encode( (array)$affiliate ));
+        $response->setContent(json_encode((array)$affiliate));
         $response->headers->set('Content-Type', 'application/json');
 
         return $response;
