@@ -1,1 +1,1 @@
-INSERT INTO `reporting`.`affiliate` (`affiliate_status_id`, `name`, `lastName`, `email`, `created_at`, `updated_at`) VALUES ('1', 'Pepe', 'Mora', 'pepe.mora@mailinator.com', NOW(), NOW());
+INSERT INTO `reporting`.`affiliate` (`affiliate_status_id`, `affiliate_key` , `name`, `last_name`, `email`, `created_at`, `updated_at`) VALUES ('1', SHA2('pepe.mora@mailinator.com', 256), 'Pepe', 'Mora', 'pepe.mora@mailinator.com', NOW(), NOW());

@@ -10,6 +10,9 @@ ParkimeterAffiliates\Affiliate\Domain\Model\Affiliate:
             generator:
                 strategy: AUTO
     fields:
+        affiliateKey:
+            type: string
+            length: 64
         name:
             type: string
             length: 255
