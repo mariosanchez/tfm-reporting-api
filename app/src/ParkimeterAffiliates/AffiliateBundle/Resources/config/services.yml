@@ -7,7 +7,7 @@ services:
     class: ParkimeterAffiliates\AffiliateBundle\Controller\GetController
     arguments:
       - '@service_container'
-      - '@ParkimeterAffiliates\Affiliate\Application\Service\GetAffiliateService'
+      - '@ParkimeterAffiliates\Affiliate\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateService'
 
 doctrine:
   orm:

@@ -2,7 +2,8 @@
 
 namespace ParkimeterAffiliates\AffiliateBundle\Controller;
 
-use ParkimeterAffiliates\Affiliate\Application\Service\GetAffiliateService;
+use ParkimeterAffiliates\Affiliate\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateRequest;
+use ParkimeterAffiliates\Affiliate\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -46,12 +47,12 @@ class GetController extends Controller
      */
     public function showAction(Request $request)
     {
-        $affiliate = ($this->service)([
-            'id' => $request->attributes->get('id'),
-        ]);
+        $dto = new GetAffiliateRequest($request->attributes->get('id'));
+
+        $result = ($this->service)($dto);
 
         $response = new Response();
-        $response->setContent(json_encode((array)$affiliate));
+        $response->setContent(json_encode((array)$result));
         $response->headers->set('Content-Type', 'application/json');
 
         return $response;
