@@ -21,14 +21,14 @@ CREATE TABLE affiliate (
 
 ALTER TABLE affiliate ADD CONSTRAINT fk_affiliate_status_affiliate_id_status FOREIGN KEY (affiliate_status_id) REFERENCES affiliate_status (affiliate_status_id);
 
-CREATE TABLE tracking_secret (
-  tracking_secret_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE affiliate_key (
+  affiliate_key_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
   affiliate_id SMALLINT UNSIGNED NOT NULL,
   secret CHAR(32) NOT NULL,
   is_enabled TINYINT UNSIGNED NOT NULL,
   created_at datetime NOT NULL,
   updated_at datetime NOT NULL,
-  PRIMARY KEY (tracking_secret_id)
+  PRIMARY KEY (affiliate_key_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
-ALTER TABLE tracking_secret ADD CONSTRAINT fk_affiliate_affiliate_id FOREIGN KEY (affiliate_id) REFERENCES affiliate (affiliate_id);
+ALTER TABLE affiliate_key ADD CONSTRAINT fk_affiliate_affiliate_id FOREIGN KEY (affiliate_id) REFERENCES affiliate (affiliate_id);
