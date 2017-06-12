@@ -1,7 +1,7 @@
 services:
 # APPLICATION
-  ParkimeterAffiliates\Affiliate\Application\Service\GetAffiliateService:
-    class: ParkimeterAffiliates\Affiliate\Application\Service\GetAffiliateService
+  ParkimeterAffiliates\Affiliate\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateService:
+    class: ParkimeterAffiliates\Affiliate\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateService
     arguments:
       - '@ParkimeterAffiliates\Affiliate\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository'
 

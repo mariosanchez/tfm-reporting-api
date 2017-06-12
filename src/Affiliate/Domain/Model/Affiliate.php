@@ -15,6 +15,11 @@ class Affiliate
     /**
      * @var string
      */
+    private $affiliateKey;
+
+    /**
+     * @var string
+     */
     private $name;
 
     /**
@@ -46,11 +51,19 @@ class Affiliate
     }
 
     /**
-     * @param int $id
+     * @return string
      */
-    public function setId(int $id)
+    public function getAffiliateKey(): ?string
     {
-        $this->id = $id;
+        return $this->affiliateKey;
+    }
+
+    /**
+     * @param string $affiliateKey
+     */
+    public function setAffiliateKey(string $affiliateKey)
+    {
+        $this->affiliateKey = $affiliateKey;
     }
 
     /**
@@ -74,7 +87,7 @@ class Affiliate
      */
     public function getLastName(): ?string
     {
-        return $this->brewery;
+        return $this->lastName;
     }
 
     /**
@@ -141,4 +154,3 @@ class Affiliate
         $this->setUpdatedAt(new \DateTime('now'));
     }
 }
-
