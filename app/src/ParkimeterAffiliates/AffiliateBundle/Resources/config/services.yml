@@ -8,6 +8,7 @@ services:
     arguments:
       - '@service_container'
       - '@ParkimeterAffiliates\Affiliate\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateService'
+      - '@nil_portugues.serializer.hal_json_serializer'
 
 doctrine:
   orm:
@@ -18,3 +19,7 @@ doctrine:
         dir: '%kernel.root_dir%/../../src/Affiliate/Infrastructure/Persistance/Repository/Doctrine/Mapping'
         prefix: 'ParkimeterAffiliates\Affiliate\Domain\Model'
         is_bundle: false
+
+nilportugues_hal_json:
+    mappings:
+      - "@ParkimeterAffiliatesAffiliateBundle/Resources/serializer"

@@ -1,0 +1,13 @@
+mapping:
+  class: ParkimeterAffiliates\Affiliate\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateResponse
+  aliased_properties:
+    affiliateId: id
+    affiliateKey: key
+  hide_properties: []
+  id_properties:
+    - affiliateId
+  urls:
+    self: affiliate_show
+  curies:
+    name: example
+    href: http://example.com/docs/rels/{rel}

@@ -7,13 +7,15 @@ use ParkimeterAffiliates\Affiliate\Application\Service\Api\Affiliate\GetAffiliat
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\Response;
+use NilPortugues\Symfony\HalJsonBundle\Serializer\HalJsonResponseTrait;
+use NilPortugues\Symfony\HalJsonBundle\Serializer\HalJsonSerializer as Serializer;
 
 /**
  * Beer controller.
  */
 class GetController extends Controller
 {
+    use HalJsonResponseTrait;
 
     /**
      * @var GetAffiliateService
@@ -26,20 +28,28 @@ class GetController extends Controller
     protected $container;
 
     /**
+     * @var Serializer
+     */
+    protected $serializer;
+
+    /**
      * GetAllController constructor.
      * @param ContainerInterface $container
      * @param GetAffiliateService $service
+     * @param Serializer $serializer
      */
     public function __construct(
         ContainerInterface $container,
-        GetAffiliateService $service
+        GetAffiliateService $service,
+        Serializer $serializer
     ) {
         $this->service = $service;
         $this->container = $container;
+        $this->serializer = $serializer;
     }
 
     /**
-     * Finds and displays a beer entity.
+     * Finds and displays an affiliate entity.
      *
      * @param $request Request
      *
@@ -47,14 +57,11 @@ class GetController extends Controller
      */
     public function showAction(Request $request)
     {
-        $dto = new GetAffiliateRequest($request->attributes->get('id'));
+        $affiliateId = $request->attributes->get('id');
+        $dto = new GetAffiliateRequest($affiliateId);
 
-        $result = ($this->service)($dto);
+        $affiliate = ($this->service)($dto);
 
-        $response = new Response();
-        $response->setContent(json_encode((array)$result));
-        $response->headers->set('Content-Type', 'application/json');
-
-        return $response;
+        return $this->response($this->serializer->serialize($affiliate));
     }
 }
