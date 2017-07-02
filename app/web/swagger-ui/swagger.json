@@ -1,0 +1,146 @@
+{
+    "swagger": "2.0",
+    "paths": {
+        "/affiliates/{id}": {
+            "get": {
+                "tags": [
+                    "Affiliates"
+                ],
+                "summary": "Finds an affiliate by affiliateId.",
+                "operationId": "getAffiliate",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Affiliate Id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerGetAffiliateSuccessResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "SwaggerGetAffiliateSuccessResponse": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "name": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "last_name": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "_links": {
+                    "$ref": "#/definitions/SwaggerSelfLink"
+                }
+            },
+            "type": "object"
+        },
+        "SwaggerError": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "path": {
+                    "type": "string",
+                    "format": "string"
+                }
+            },
+            "type": "object"
+        },
+        "SwaggerErrorResponse": {
+            "properties": {
+                "total": {
+                    "type": "integer",
+                    "format": "int"
+                },
+                "_embedded": {
+                    "$ref": "#/definitions/SwaggerErrors"
+                }
+            },
+            "type": "object"
+        },
+        "SwaggerErrors": {
+            "properties": {
+                "errors": {
+                    "$ref": "#/definitions/SwaggerError"
+                }
+            },
+            "type": "object"
+        },
+        "SwaggerLink": {
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "string"
+                }
+            }
+        },
+        "SwaggerLinks": {
+            "properties": {
+                "self": {
+                    "$ref": "#/definitions/SwaggerLink"
+                },
+                "first": {
+                    "$ref": "#/definitions/SwaggerLink"
+                },
+                "prev": {
+                    "$ref": "#/definitions/SwaggerLink"
+                },
+                "next": {
+                    "$ref": "#/definitions/SwaggerLink"
+                },
+                "last": {
+                    "$ref": "#/definitions/SwaggerLink"
+                }
+            }
+        },
+        "SwaggerSelfLink": {
+            "properties": {
+                "self": {
+                    "type": "string",
+                    "$ref": "#/definitions/SwaggerLink"
+                }
+            }
+        }
+    }
+}

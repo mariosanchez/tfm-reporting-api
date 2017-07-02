@@ -1,3 +1,3 @@
-parkimeter_affiliates_shared_homepage:
+swagger_ui:
     path:     /api-docs
     defaults: { _controller: ParkimeterAffiliatesSharedBundle:Docs:index }
