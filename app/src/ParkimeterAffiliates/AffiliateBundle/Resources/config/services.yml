@@ -1,5 +1,5 @@
 imports:
-    - {resource: '../../../../../../src/Affiliate/Infrastructure/DependencyInjection/Symfony/services.yml'}
+    - {resource: '../../../../../../src/Infrastructure/DependencyInjection/Symfony/services.yml'}
 
 services:
 
@@ -16,7 +16,7 @@ doctrine:
       Affiliate:
         mapping: true
         type: yml
-        dir: '%kernel.root_dir%/../../src/Affiliate/Infrastructure/Persistance/Repository/Doctrine/Mapping'
+        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistance/Repository/Doctrine/Mapping'
         prefix: 'ParkimeterAffiliates\Domain\Model'
         is_bundle: false
 
