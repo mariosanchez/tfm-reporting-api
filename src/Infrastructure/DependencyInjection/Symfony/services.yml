@@ -1,0 +1,13 @@
+services:
+# APPLICATION
+  ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateService:
+    class: ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateService
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository'
+
+# INFRASTRUCTURE
+  ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository:
+    class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository
+    factory: ["@doctrine", getRepository]
+    arguments:
+      - 'ParkimeterAffiliates\Domain\Model\Affiliate'

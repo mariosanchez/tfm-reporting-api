@@ -2,8 +2,8 @@
 
 namespace ParkimeterAffiliates\AffiliateBundle\Controller;
 
-use ParkimeterAffiliates\Affiliate\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateRequest;
-use ParkimeterAffiliates\Affiliate\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateService;
+use ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateRequest;
+use ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\DependencyInjection\ContainerInterface;

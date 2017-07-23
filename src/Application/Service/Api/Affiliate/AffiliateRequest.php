@@ -1,6 +1,6 @@
 <?php
 
-namespace ParkimeterAffiliates\Affiliate\Application\Service\Api\Affiliate;
+namespace ParkimeterAffiliates\Application\Service\Api\Affiliate;
 
 abstract class AffiliateRequest
 {

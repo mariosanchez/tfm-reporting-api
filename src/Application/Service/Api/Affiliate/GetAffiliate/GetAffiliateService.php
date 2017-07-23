@@ -1,8 +1,8 @@
 <?php
 
-namespace ParkimeterAffiliates\Affiliate\Application\Service\Api\Affiliate\GetAffiliate;
+namespace ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate;
 
-use ParkimeterAffiliates\Affiliate\Domain\Model\AffiliateRepository;
+use ParkimeterAffiliates\Domain\Model\AffiliateRepository;
 
 final class GetAffiliateService
 {

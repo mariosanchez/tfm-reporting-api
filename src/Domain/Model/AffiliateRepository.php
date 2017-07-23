@@ -1,6 +1,6 @@
 <?php
 
-namespace ParkimeterAffiliates\Affiliate\Domain\Model;
+namespace ParkimeterAffiliates\Domain\Model;
 
 interface AffiliateRepository
 {

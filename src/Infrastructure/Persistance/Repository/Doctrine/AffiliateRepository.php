@@ -1,9 +1,9 @@
 <?php
 
-namespace ParkimeterAffiliates\Affiliate\Infrastructure\Persistance\Repository\Doctrine;
+namespace ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine;
 
-use ParkimeterAffiliates\Affiliate\Domain\Model\AffiliateRepository as AffiliateRepositoryInterface;
-use ParkimeterAffiliates\Affiliate\Domain\Model\Affiliate;
+use ParkimeterAffiliates\Domain\Model\AffiliateRepository as AffiliateRepositoryInterface;
+use ParkimeterAffiliates\Domain\Model\Affiliate;
 use \Doctrine\ORM\EntityRepository;
 
 /**
