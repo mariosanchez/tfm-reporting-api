@@ -24,6 +24,6 @@ default:
         user:
             paths: ['./tests/affiliate/Acceptance/']
             contexts:
-              - Bandit\Tests\affiliate\Acceptance\Context\FeatureContext
+              - ParkimeterAffiliates\Tests\affiliate\Acceptance\Context\FeatureContext
               - Rezzza\RestApiBehatExtension\RestApiContext
               - Rezzza\RestApiBehatExtension\Json\JsonContext
