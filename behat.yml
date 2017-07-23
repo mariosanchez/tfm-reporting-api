@@ -22,8 +22,8 @@ default:
             - Rezzza\RestApiBehatExtension\RestApiContext
             - Rezzza\RestApiBehatExtension\Json\JsonContext
         user:
-            paths: ['./tests/affiliate/Acceptance/']
+            paths: ['./tests/Affiliate/Acceptance/']
             contexts:
-              - ParkimeterAffiliates\Tests\affiliate\Acceptance\Context\FeatureContext
+              - ParkimeterAffiliates\Tests\Affiliate\Acceptance\Context\FeatureContext
               - Rezzza\RestApiBehatExtension\RestApiContext
               - Rezzza\RestApiBehatExtension\Json\JsonContext

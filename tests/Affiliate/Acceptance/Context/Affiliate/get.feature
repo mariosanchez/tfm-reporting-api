@@ -1,50 +1,21 @@
-Feature: Get a affiliate
-
-  Background:
-    Given I send a POST request to "/affiliates" with body:
-"""
-{
-  "id": "bfbaf03c-027c-42e7-a5d4-000000000011",
-  "field1": "hello",
-  "field2": "party",
-  "field3": "people"
-}
-"""
-    And the response status code should be 201
+Feature: Get an affiliate
 
   Scenario:
-    Given I send a GET request to "/affiliates/bfbaf03c-027c-42e7-a5d4-000000000011"
-    Then the response should be in JSON
+    Given I send a GET request to "/affiliates/1"
+    Then the response status code should be 200
+    And the response should be in JSON
     And the JSON should be equal to:
 """
 {
-  "id": "bfbaf03c-027c-42e7-a5d4-000000000011",
-  "field1": "hello",
-  "field2": "party",
-  "field3": "people",
-  "_links":{
-    "self":{
-        "href":"\/affiliates\/bfbaf03c-027c-42e7-a5d4-000000000011"
+  "id": "1",
+  "key": "557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a",
+  "name": "Pepe",
+  "last_name": "Mora",
+  "email": "pepe.mora@mailinator.com",
+  "_links": {
+    "self": {
+      "href": "/app_dev.php/affiliates/1"
     }
-  }
-}
-"""
-
-  Scenario:
-    Given I send a GET request to "/affiliates/aaaa"
-    Then the response status code should be 400
-    Then the response should be in JSON
-    And the JSON should be equal to:
-"""
-{
-  "total":1,
-  "_embedded":{
-    "errors":[
-      {
-        "message":"Provided identifier 'aaaa' is not a valid UUID.",
-        "path":"\/id"
-      }
-    ]
   }
 }
 """
