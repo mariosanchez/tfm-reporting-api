@@ -11,3 +11,6 @@ services:
     factory: ["@doctrine", getRepository]
     arguments:
       - 'ParkimeterAffiliates\Domain\Model\Affiliate'
+
+  ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer:
+    class: ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer

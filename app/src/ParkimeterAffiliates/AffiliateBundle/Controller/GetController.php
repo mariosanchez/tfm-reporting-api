@@ -2,6 +2,7 @@
 
 namespace ParkimeterAffiliates\AffiliateBundle\Controller;
 
+use ParkimeterAffiliates\Application\Service\Api\Affiliate\AffiliateApiException;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateRequest;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -9,6 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use NilPortugues\Symfony\HalJsonBundle\Serializer\HalJsonResponseTrait;
 use NilPortugues\Symfony\HalJsonBundle\Serializer\HalJsonSerializer as Serializer;
+use ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer as ErrorSerializer;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Beer controller.
@@ -30,22 +33,30 @@ class GetController extends Controller
     /**
      * @var Serializer
      */
-    protected $serializer;
+    private $serializer;
+
+    /**
+     * @var ErrorSerializer
+     */
+    private $errorSerializer;
 
     /**
      * GetAllController constructor.
      * @param ContainerInterface $container
      * @param GetAffiliateService $service
      * @param Serializer $serializer
+     * @param ErrorSerializer $errorSerializer
      */
     public function __construct(
         ContainerInterface $container,
         GetAffiliateService $service,
-        Serializer $serializer
+        Serializer $serializer,
+        ErrorSerializer $errorSerializer
     ) {
         $this->service = $service;
         $this->container = $container;
         $this->serializer = $serializer;
+        $this->errorSerializer = $errorSerializer;
     }
 
     /**
@@ -90,11 +101,17 @@ class GetController extends Controller
      */
     public function showAction(Request $request)
     {
-        $affiliateId = $request->attributes->get('id');
-        $dto = new GetAffiliateRequest($affiliateId);
+        try {
+            $affiliateId = $request->attributes->get('id');
+            $dto = new GetAffiliateRequest($affiliateId);
 
-        $affiliate = ($this->service)($dto);
+            $affiliate = ($this->service)($dto);
+            $output = $this->response($this->serializer->serialize($affiliate));
+        } catch (AffiliateApiException $e) {
+            $output = $this->errorSerializer->serialize($e->errorBag());
+            return new Response($output, $e->getCode());
+        }
 
-        return $this->response($this->serializer->serialize($affiliate));
+        return $output;
     }
 }
