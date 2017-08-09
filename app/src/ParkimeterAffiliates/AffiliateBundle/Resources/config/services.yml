@@ -11,6 +11,14 @@ services:
       - '@nil_portugues.serializer.hal_json_serializer'
       - '@ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer'
 
+  ParkimeterAffiliates\AffiliateBundle\Controller\PostController:
+    class: ParkimeterAffiliates\AffiliateBundle\Controller\PostController
+    arguments:
+      - '@service_container'
+      - '@ParkimeterAffiliates\Application\Service\Api\Affiliate\PostAffiliate\PostAffiliateService'
+      - '@nil_portugues.serializer.hal_json_serializer'
+      - '@ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer'
+
 doctrine:
   orm:
     mappings:

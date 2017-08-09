@@ -39,6 +39,7 @@ final class GetAffiliateService
 
             return new GetAffiliateResponse(
                 $result->getId(),
+                $result->getStatusId(),
                 $result->getAffiliateKey(),
                 $result->getName(),
                 $result->getLastName(),

@@ -7,10 +7,17 @@ namespace ParkimeterAffiliates\Domain\Model;
  */
 class Affiliate
 {
+    const AFFILIATE_STATUS_ENABLED = 1;
+
     /**
      * @var int
      */
     private $id;
+
+    /**
+     * @var int
+     */
+    private $statusId;
 
     /**
      * @var string
@@ -41,6 +48,12 @@ class Affiliate
      * @var \DateTime
      */
     private $updatedAt;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime('now');
+        $this->updatedAt = $this->createdAt;
+    }
 
     /**
      * @return int
@@ -147,10 +160,36 @@ class Affiliate
     }
 
     /**
+     * @return int
+     */
+    public function getStatusId(): int
+    {
+        return $this->statusId;
+    }
+
+    /**
      * Updates updatedAt value on update
      */
     public function updatedTimestamps()
     {
         $this->setUpdatedAt(new \DateTime('now'));
+    }
+
+    /**
+     * Generates the affiliate key hashing a given word (by default the email combined with current microtime)
+     *
+     * @param string|null $word
+     */
+    public function generateAffiliateKey(string $word = null)
+    {
+        $this->affiliateKey = hash(
+            'sha256',
+            isset($word) ? $word : $this->email . microtime()
+        );
+    }
+
+    public function verify()
+    {
+        $this->statusId = self::AFFILIATE_STATUS_ENABLED;
     }
 }

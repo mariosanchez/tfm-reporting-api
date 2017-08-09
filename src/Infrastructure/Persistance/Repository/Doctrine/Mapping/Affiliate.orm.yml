@@ -10,6 +10,9 @@ ParkimeterAffiliates\Domain\Model\Affiliate:
             generator:
                 strategy: AUTO
     fields:
+        statusId:
+            column: affiliate_status_id
+            type: integer
         affiliateKey:
             type: string
             length: 64

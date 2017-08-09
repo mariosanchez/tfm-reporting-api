@@ -1,5 +1,10 @@
 {
     "swagger": "2.0",
+    "host": "192.168.10.12",
+    "basePath": "/app_dev.php",
+    "schemes": [
+        "http"
+    ],
     "paths": {
         "/affiliates/{id}": {
             "get": {
@@ -47,12 +52,94 @@
                     }
                 }
             }
+        },
+        "/affiliates/": {
+            "post": {
+                "tags": [
+                    "Affiliates"
+                ],
+                "summary": "Creates an affiliate",
+                "operationId": "postAffiliate",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Affiliate object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/PostAffiliateControllerInputSwagger"
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
+        "PostAffiliateControllerInputSwagger": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "last_name": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "string"
+                }
+            }
+        },
+        "PutAffiliateControllerInputSwagger": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "last_name": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "string"
+                }
+            },
+            "type": "object"
+        },
         "SwaggerGetAffiliateSuccessResponse": {
             "properties": {
                 "id": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "status_id": {
+                    "type": "integer",
+                    "format": "int"
+                },
+                "key": {
                     "type": "string",
                     "format": "string"
                 },

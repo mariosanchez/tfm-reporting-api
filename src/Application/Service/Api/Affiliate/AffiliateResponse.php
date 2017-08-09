@@ -8,6 +8,9 @@ abstract class AffiliateResponse
     protected $affiliateId;
 
     /** @var string */
+    protected $statusId;
+
+    /** @var string */
     protected $affiliateKey;
 
     /** @var string */
@@ -22,6 +25,7 @@ abstract class AffiliateResponse
     /**
      * EmployerResponse constructor.
      * @param string|null $affiliateId
+     * @param int|null $statusId
      * @param string|null $affiliateKey
      * @param string|null $name
      * @param string|null $lastName
@@ -29,12 +33,14 @@ abstract class AffiliateResponse
      */
     public function __construct(
         ?string $affiliateId,
+        ?int $statusId,
         ?string $affiliateKey,
         ?string $name,
         ?string $lastName,
         ?string $email
     ) {
         $this->affiliateId = $affiliateId;
+        $this->statusId = $statusId;
         $this->affiliateKey = $affiliateKey;
         $this->name = $name;
         $this->lastName = $lastName;
@@ -47,6 +53,14 @@ abstract class AffiliateResponse
     public function affiliateId(): ?string
     {
         return $this->affiliateId;
+    }
+
+    /**
+     * @return int
+     */
+    public function statusId(): ?int
+    {
+        return $this->statusId;
     }
 
     /**
