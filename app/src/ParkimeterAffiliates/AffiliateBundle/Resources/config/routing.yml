@@ -1,3 +1,4 @@
 parkimeter_affiliates_affiliate:
     resource: "@ParkimeterAffiliatesAffiliateBundle/Resources/config/routing/affiliate.yml"
     prefix:   /affiliates
+    methods: "GET"

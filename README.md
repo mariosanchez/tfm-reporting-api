@@ -20,3 +20,10 @@
             └── Repository
                 └── Doctrine
 ```
+
+## Generate Swagger Docs JSON file
+
+In `app/src` folder, run:
+```
+../../vendor/bin/swagger -o ../web/swagger-ui/
+```

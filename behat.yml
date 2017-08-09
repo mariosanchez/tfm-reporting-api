@@ -1,0 +1,29 @@
+default:
+    formatters:
+        pretty: true
+    extensions:
+        Behat\Symfony2Extension: ~
+
+        Behat\MinkExtension:
+          sessions:
+            default:
+              symfony2: ~
+
+        Rezzza\RestApiBehatExtension\Extension:
+            rest:
+                base_url: http://192.168.10.12/app_dev.php/
+                store_response: true
+    testers:
+        rerun_cache: /tmp/.behat-cache
+
+    suites:
+        default:
+          contexts:
+            - Rezzza\RestApiBehatExtension\RestApiContext
+            - Rezzza\RestApiBehatExtension\Json\JsonContext
+        user:
+            paths: ['./tests/Affiliate/Acceptance/']
+            contexts:
+              - ParkimeterAffiliates\Tests\Affiliate\Acceptance\Context\FeatureContext
+              - Rezzza\RestApiBehatExtension\RestApiContext
+              - Rezzza\RestApiBehatExtension\Json\JsonContext

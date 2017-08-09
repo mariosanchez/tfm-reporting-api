@@ -15,7 +15,9 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new NilPortugues\Symfony\HalJsonBundle\NilPortuguesSymfonyHalJsonBundle(),
             new ParkimeterAffiliates\AffiliateBundle\ParkimeterAffiliatesAffiliateBundle(),
+            new ParkimeterAffiliates\SharedBundle\ParkimeterAffiliatesSharedBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -1,0 +1,4 @@
+services:
+#    parkimeter_affiliates_shared.example:
+#        class: ParkimeterAffiliatesSharedBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
