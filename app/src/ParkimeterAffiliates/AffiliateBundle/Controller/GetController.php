@@ -106,12 +106,12 @@ class GetController extends Controller
             $dto = new GetAffiliateRequest($affiliateId);
 
             $affiliate = ($this->service)($dto);
-            $output = $this->response($this->serializer->serialize($affiliate));
+            $output = $this->serializer->serialize($affiliate);
         } catch (AffiliateApiException $e) {
             $output = $this->errorSerializer->serialize($e->errorBag());
-            return new Response($output, $e->getCode());
+            return new Response($output, $e->getCode(), ['Content-type' => 'application/vnd.error+json']);
         }
 
-        return $output;
+        return $this->response($output);
     }
 }
