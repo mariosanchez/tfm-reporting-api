@@ -12,6 +12,7 @@ use ParkimeterAffiliates\Domain\Model\Attributes\Name;
 class Affiliate
 {
     const AFFILIATE_STATUS_ENABLED = 1;
+    const AFFILIATE_STATUS_DISABLED = 0;
 
     /**
      * @var int
@@ -29,12 +30,12 @@ class Affiliate
     private $affiliateKey;
 
     /**
-     * @var string
+     * @var Name
      */
     private $name;
 
     /**
-     * @var string
+     * @var LastName
      */
     private $lastName;
 
@@ -61,7 +62,7 @@ class Affiliate
         $this->setName(Name::fromString($name));
         $this->setLastName(LastName::fromString($lastName));
         $this->setEmail(Email::fromString($email));
-        $this->createdAt = new \DateTime('now');
+        $this->createdAt = new \DateTimeImmutable('now');
         $this->updatedAt = $this->createdAt;
     }
 
@@ -201,5 +202,13 @@ class Affiliate
     public function verify()
     {
         $this->statusId = self::AFFILIATE_STATUS_ENABLED;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDisabled(): bool
+    {
+        return $this->statusId === self::AFFILIATE_STATUS_DISABLED;
     }
 }

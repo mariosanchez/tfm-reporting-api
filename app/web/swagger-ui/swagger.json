@@ -51,6 +51,58 @@
                         }
                     }
                 }
+            },
+            "put": {
+                "tags": [
+                    "Affiliates"
+                ],
+                "summary": "Modify all of a affiliate's fields.",
+                "operationId": "putAffiliate",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Affiliate Id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Affiliate object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/PutAffiliateControllerInputSwagger"
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    }
+                }
             }
         },
         "/affiliates/": {

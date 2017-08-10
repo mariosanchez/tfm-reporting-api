@@ -10,6 +10,11 @@ services:
     arguments:
       - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository'
 
+  ParkimeterAffiliates\Application\Service\Api\Affiliate\PutAffiliate\PutAffiliateService:
+    class: ParkimeterAffiliates\Application\Service\Api\Affiliate\PutAffiliate\PutAffiliateService
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository'
+
 # INFRASTRUCTURE
   ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository:
     class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository

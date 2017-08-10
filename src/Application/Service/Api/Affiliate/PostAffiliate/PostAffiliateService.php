@@ -5,7 +5,6 @@ namespace ParkimeterAffiliates\Application\Service\Api\Affiliate\PostAffiliate;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\AffiliateApiException;
 use ParkimeterAffiliates\Domain\Model\Affiliate;
 use ParkimeterAffiliates\Domain\Model\AffiliateRepository;
-use ParkimeterAffiliates\Domain\Model\Attributes\Email;
 
 final class PostAffiliateService
 {
