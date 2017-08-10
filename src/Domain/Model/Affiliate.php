@@ -98,9 +98,9 @@ class Affiliate
     }
 
     /**
-     * @param string $name
+     * @param Name $name
      */
-    public function setName(string $name)
+    public function setName(Name $name)
     {
         $this->name = $name;
     }
@@ -114,9 +114,9 @@ class Affiliate
     }
 
     /**
-     * @param string $lastName
+     * @param LastName $lastName
      */
-    public function setLastName(string $lastName)
+    public function setLastName(LastName $lastName)
     {
         $this->lastName = $lastName;
     }

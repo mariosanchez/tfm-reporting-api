@@ -10,6 +10,12 @@ ParkimeterAffiliates\Domain\Model\Affiliate:
             generator:
                 strategy: AUTO
     embedded:
+        name:
+            class: ParkimeterAffiliates\Domain\Model\Attributes\Name
+            columnPrefix: false
+        lastName:
+            class: ParkimeterAffiliates\Domain\Model\Attributes\LastName
+            columnPrefix: false
         email:
             class: ParkimeterAffiliates\Domain\Model\Attributes\Email
             columnPrefix: false
@@ -20,12 +26,6 @@ ParkimeterAffiliates\Domain\Model\Affiliate:
         affiliateKey:
             type: string
             length: 64
-        name:
-            type: string
-            length: 255
-        lastName:
-            type: string
-            length: 255
         createdAt:
             type: datetime
             column: created_at

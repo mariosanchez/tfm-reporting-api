@@ -1,0 +1,7 @@
+ParkimeterAffiliates\Domain\Model\Attributes\Name:
+    type: embeddable
+    fields:
+        name:
+            column: name
+            type: string
+            length: 255
