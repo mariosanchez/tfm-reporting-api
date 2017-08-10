@@ -3,6 +3,8 @@
 namespace ParkimeterAffiliates\Domain\Model;
 
 use ParkimeterAffiliates\Domain\Model\Attributes\Email;
+use ParkimeterAffiliates\Domain\Model\Attributes\LastName;
+use ParkimeterAffiliates\Domain\Model\Attributes\Name;
 
 /**
  * Affiliate
@@ -56,8 +58,8 @@ class Affiliate
         string $lastName,
         string $email
     ) {
-        $this->setName($name);
-        $this->setLastName($lastName);
+        $this->setName(Name::fromString($name));
+        $this->setLastName(LastName::fromString($lastName));
         $this->setEmail(Email::fromString($email));
         $this->createdAt = new \DateTime('now');
         $this->updatedAt = $this->createdAt;
