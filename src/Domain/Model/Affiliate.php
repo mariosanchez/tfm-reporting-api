@@ -45,12 +45,12 @@ class Affiliate
     private $email;
 
     /**
-     * @var \DateTime
+     * @var \DateTimeImmutable
      */
     private $createdAt;
 
     /**
-     * @var \DateTime
+     * @var \DateTimeImmutable
      */
     private $updatedAt;
 
