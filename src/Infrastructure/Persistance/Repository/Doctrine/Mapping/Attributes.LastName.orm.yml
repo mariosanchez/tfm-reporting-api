@@ -1,0 +1,7 @@
+ParkimeterAffiliates\Domain\Model\Attributes\LastName:
+    type: embeddable
+    fields:
+        lastName:
+            column: last_name
+            type: string
+            length: 255

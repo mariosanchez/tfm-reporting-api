@@ -6,37 +6,36 @@ use Exception;
 use Assert\Assertion;
 use ParkimeterAffiliates\Domain\Model\AffiliateException;
 
-final class Email
+final class Name
 {
     /**
      * @var string
      */
-    private $address;
+    private $name;
 
     /**
-     * Email constructor.
-     * @param $address
+     * Name constructor.
+     * @param $name
      * @throws AffiliateException
      */
-    public function __construct($address)
+    public function __construct($name)
     {
         try {
-            Assertion::email($address);
-            Assertion::notEmpty($address);
+            Assertion::notEmpty($name);
         } catch (Exception $e) {
-            throw AffiliateException::emailIsInvalid($address);
+            throw AffiliateException::nameIsInvalid($name);
         }
 
-        $this->address = $address;
+        $this->name = $name;
     }
 
     /**
-     * @param $email
-     * @return Email
+     * @param $name
+     * @return Name
      */
-    public static function fromString($email): Email
+    public static function fromString($name): Name
     {
-        return new self((string) $email);
+        return new self((string) $name);
     }
 
     /**
@@ -44,7 +43,7 @@ final class Email
      */
     public function get(): ?string
     {
-        return $this->address;
+        return $this->name;
     }
 
     /**
@@ -52,6 +51,6 @@ final class Email
      */
     public function __toString()
     {
-        return $this->address;
+        return $this->name;
     }
 }

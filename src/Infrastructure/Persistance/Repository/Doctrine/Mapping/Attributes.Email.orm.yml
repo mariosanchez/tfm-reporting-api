@@ -4,4 +4,4 @@ ParkimeterAffiliates\Domain\Model\Attributes\Email:
         address:
             column: email
             type: string
-            length: '250'
+            length: 255
