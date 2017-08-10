@@ -1,24 +1,29 @@
 <?php
 
-namespace ParkimeterAffiliates\Application\Service\Api\Affiliate\PostAffiliate;
+namespace ParkimeterAffiliates\Application\Service\Api\Affiliate\PutAffiliate;
 
-class PostAffiliateRequest
+use ParkimeterAffiliates\Application\Service\Api\Affiliate\AffiliateRequest;
+
+class PutAffiliateRequest extends AffiliateRequest
 {
     private $name;
     private $lastName;
     private $email;
 
     /**
-     * PostAffiliateRequest constructor.
+     * PutAffiliateRequest constructor.
+     * @param null|string $affiliateId
      * @param null|string $name
      * @param null|string $lastName
      * @param null|string $email
      */
     public function __construct(
+        ?string $affiliateId,
         ?string $name,
         ?string $lastName,
         ?string $email
     ) {
+        parent::__construct($affiliateId);
         $this->name = (string) $name;
         $this->lastName = (string) $lastName;
         $this->email = (string) $email;

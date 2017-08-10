@@ -7,3 +7,13 @@ affiliate_post:
     path:     /
     defaults: { _controller: "ParkimeterAffiliatesAffiliateBundle:Post:post" }
     methods:  POST
+
+affiliate_put:
+    path:     /{id}
+    defaults: { _controller: "ParkimeterAffiliatesAffiliateBundle:Put:put" }
+    methods:  PUT
+
+affiliate_delete:
+    path:     /{id}
+    defaults: { _controller: "ParkimeterAffiliatesAffiliateBundle:Delete:delete" }
+    methods:  DELETE

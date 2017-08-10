@@ -19,6 +19,22 @@ services:
       - '@nil_portugues.serializer.hal_json_serializer'
       - '@ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer'
 
+  ParkimeterAffiliates\AffiliateBundle\Controller\PutController:
+    class: ParkimeterAffiliates\AffiliateBundle\Controller\PutController
+    arguments:
+      - '@service_container'
+      - '@ParkimeterAffiliates\Application\Service\Api\Affiliate\PutAffiliate\PutAffiliateService'
+      - '@nil_portugues.serializer.hal_json_serializer'
+      - '@ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer'
+
+  ParkimeterAffiliates\AffiliateBundle\Controller\DeleteController:
+    class: ParkimeterAffiliates\AffiliateBundle\Controller\DeleteController
+    arguments:
+      - '@service_container'
+      - '@ParkimeterAffiliates\Application\Service\Api\Affiliate\DeleteAffiliate\DeleteAffiliateService'
+      - '@nil_portugues.serializer.hal_json_serializer'
+      - '@ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer'
+
 doctrine:
   orm:
     mappings:

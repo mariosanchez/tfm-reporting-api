@@ -1,14 +1,14 @@
 <?php
 
-namespace ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate;
+namespace ParkimeterAffiliates\Application\Service\Api\Affiliate\DeleteAffiliate;
 
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\AffiliateApiException;
-use ParkimeterAffiliates\Application\Service\Api\Affiliate\GuardAffiliateDisabled;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GuardAffiliateNotFound;
+use ParkimeterAffiliates\Application\Service\Api\Affiliate\GuardAffiliateDisabled;
 use ParkimeterAffiliates\Domain\Model\Affiliate;
 use ParkimeterAffiliates\Domain\Model\AffiliateRepository;
 
-final class GetAffiliateService
+final class DeleteAffiliateService
 {
     /**
      * @var AffiliateRepository
@@ -16,7 +16,7 @@ final class GetAffiliateService
     private $repository;
 
     /**
-     * GetAffiliateService constructor.
+     * DeleteAffiliateService constructor
      * @param AffiliateRepository $repository
      */
     public function __construct(
@@ -28,25 +28,19 @@ final class GetAffiliateService
     /**
      * Returns a affiliate by given data
      *
-     * @param GetAffiliateRequest $request
-     * @return GetAffiliateResponse
+     * @param DeleteAffiliateRequest $request
      * @throws AffiliateApiException
      */
-    public function __invoke(GetAffiliateRequest $request): GetAffiliateResponse
+    public function __invoke(DeleteAffiliateRequest $request)
     {
         try {
             $affiliate = $this->repository->findById($request->affiliateId());
 
-            $this->getGuard($request->affiliateId(), $affiliate);
+            $this->deleteGuard($request->affiliateId(), $affiliate);
 
-            return new GetAffiliateResponse(
-                $affiliate->getId(),
-                $affiliate->getStatusId(),
-                $affiliate->getAffiliateKey(),
-                $affiliate->getName(),
-                $affiliate->getLastName(),
-                $affiliate->getEmail()
-            );
+            $affiliate->disable();
+
+            $this->repository->save($affiliate);
         } catch (\Exception $e) {
             throw AffiliateApiException::fromException($e);
         }
@@ -56,7 +50,7 @@ final class GetAffiliateService
      * @param int $id
      * @param Affiliate $affiliate
      */
-    private function getGuard(int $id, Affiliate $affiliate):void
+    private function deleteGuard(int $id, Affiliate $affiliate):void
     {
         GuardAffiliateNotFound::guard($affiliate, $id);
         GuardAffiliateDisabled::guard($affiliate);

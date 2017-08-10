@@ -12,6 +12,7 @@ use ParkimeterAffiliates\Domain\Model\Attributes\Name;
 class Affiliate
 {
     const AFFILIATE_STATUS_ENABLED = 1;
+    const AFFILIATE_STATUS_DISABLED = 0;
 
     /**
      * @var int
@@ -29,12 +30,12 @@ class Affiliate
     private $affiliateKey;
 
     /**
-     * @var string
+     * @var Name
      */
     private $name;
 
     /**
-     * @var string
+     * @var LastName
      */
     private $lastName;
 
@@ -61,8 +62,7 @@ class Affiliate
         $this->setName(Name::fromString($name));
         $this->setLastName(LastName::fromString($lastName));
         $this->setEmail(Email::fromString($email));
-        $this->createdAt = new \DateTime('now');
-        $this->updatedAt = $this->createdAt;
+        $this->createdAt = new \DateTimeImmutable('now');
     }
 
     /**
@@ -138,33 +138,33 @@ class Affiliate
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeImmutable
      */
-    public function getCreatedAt(): ?\DateTime
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
     }
 
     /**
-     * @param \DateTime $createdAt
+     * @param \DateTimeImmutable $createdAt
      */
-    public function setCreatedAt(\DateTime $createdAt)
+    public function setCreatedAt(\DateTimeImmutable $createdAt)
     {
         $this->createdAt = $createdAt;
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeImmutable
      */
-    public function getUpdatedAt(): ?\DateTime
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
     }
 
     /**
-     * @param \DateTime $updatedAt
+     * @param \DateTimeImmutable $updatedAt
      */
-    public function setUpdatedAt(\DateTime $updatedAt)
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt)
     {
         $this->updatedAt = $updatedAt;
     }
@@ -182,7 +182,7 @@ class Affiliate
      */
     public function updatedTimestamps()
     {
-        $this->setUpdatedAt(new \DateTime('now'));
+        $this->setUpdatedAt(new \DateTimeImmutable('now'));
     }
 
     /**
@@ -201,5 +201,18 @@ class Affiliate
     public function verify()
     {
         $this->statusId = self::AFFILIATE_STATUS_ENABLED;
+    }
+
+    public function disable()
+    {
+        $this->statusId = self::AFFILIATE_STATUS_DISABLED;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDisabled(): bool
+    {
+        return $this->statusId === self::AFFILIATE_STATUS_DISABLED;
     }
 }
