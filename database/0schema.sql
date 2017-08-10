@@ -17,7 +17,7 @@ CREATE TABLE affiliate_status (
   PRIMARY KEY (affiliate_status_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
-INSERT INTO `reporting`.`affiliate_status` (`affiliate_status_id`, `name`) VALUES (null, 'enabled'), (null, 'unverified'), (null, 'disabled');
+INSERT INTO `reporting`.`affiliate_status` (`affiliate_status_id`, `name`) VALUES (null, 'disabled'), (null, 'enabled'), (null, 'unverified');
 
 CREATE TABLE affiliate (
   affiliate_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,

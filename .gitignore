@@ -16,3 +16,4 @@
 /app/web/bundles/
 /node_modules/
 /tmp/*
+/swagger-conf.php

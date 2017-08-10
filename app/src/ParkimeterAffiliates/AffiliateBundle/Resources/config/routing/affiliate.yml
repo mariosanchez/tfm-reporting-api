@@ -1,4 +1,9 @@
-affiliate_show:
+affiliate_get:
     path:     /{id}
-    defaults: { _controller: "ParkimeterAffiliatesAffiliateBundle:Get:show" }
+    defaults: { _controller: "ParkimeterAffiliatesAffiliateBundle:Get:get" }
     methods:  GET
+
+affiliate_post:
+    path:     /
+    defaults: { _controller: "ParkimeterAffiliatesAffiliateBundle:Post:post" }
+    methods:  POST

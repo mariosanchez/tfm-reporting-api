@@ -7,7 +7,7 @@ mapping:
   id_properties:
     - affiliateId
   urls:
-    self: affiliate_show
+    self: affiliate_get
   curies:
     name: example
     href: http://example.com/docs/rels/{rel}
