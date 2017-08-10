@@ -9,6 +9,10 @@ ParkimeterAffiliates\Domain\Model\Affiliate:
             id: true
             generator:
                 strategy: AUTO
+    embedded:
+        email:
+            class: ParkimeterAffiliates\Domain\Model\Attributes\Email
+            columnPrefix: false
     fields:
         statusId:
             column: affiliate_status_id
@@ -20,9 +24,6 @@ ParkimeterAffiliates\Domain\Model\Affiliate:
             type: string
             length: 255
         lastName:
-            type: string
-            length: 255
-        email:
             type: string
             length: 255
         createdAt:

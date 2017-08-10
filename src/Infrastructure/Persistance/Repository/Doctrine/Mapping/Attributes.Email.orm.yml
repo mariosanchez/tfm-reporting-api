@@ -1,0 +1,7 @@
+ParkimeterAffiliates\Domain\Model\Attributes\Email:
+    type: embeddable
+    fields:
+        address:
+            column: email
+            type: string
+            length: '250'
