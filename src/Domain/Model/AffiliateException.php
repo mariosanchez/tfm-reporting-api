@@ -9,14 +9,14 @@ class AffiliateException extends AffiliateDomainException
     public const VALIDATOR_ERROR = "Value objects validation failed.";
     public const VALIDATION_ERROR_CODE = 400;
 
-    public const INVALID_FIELD1_MESSAGE = "Provided value '%s' is considered an empty value.";
-    public const INVALID_FIELD1_CODE = 1001;
+    public const INVALID_NAME_MESSAGE = "Provided value '%s' is considered an empty value or invalid.";
+    public const INVALID_NAME_CODE = 1001;
 
-    public const INVALID_FIELD2_MESSAGE = "Provided value '%s' is considered an empty value.";
-    public const INVALID_FIELD2_CODE = 1002;
+    public const INVALID_LAST_NAME_MESSAGE = "Provided value '%s' is considered an empty value or invalid.";
+    public const INVALID_LAST_NAME_CODE = 1002;
 
-    public const INVALID_FIELD3_MESSAGE = "Provided value '%s' is considered an empty value.";
-    public const INVALID_FIELD3_CODE = 1003;
+    public const INVALID_EMAIL_MESSAGE = "Provided value '%s' is considered an empty value or invalid.";
+    public const INVALID_EMAIL_CODE = 1003;
 
     public const IMMUTABLE_ID_MESSAGE = "Identity value cannot be changed.";
     public const IMMUTABLE_ID_CODE = 1000;
@@ -44,7 +44,7 @@ class AffiliateException extends AffiliateDomainException
     public static function invalidAffiliateId($value)
     {
         $message = sprintf(self::INVALID_AFFILIATE_ID_MESSAGE, $value);
-        $code = self::INVALID_FIELD1_CODE;
+        $code = self::INVALID_NAME_CODE;
         return self::buildException('/id', $message, $code);
     }
 
@@ -113,36 +113,36 @@ class AffiliateException extends AffiliateDomainException
      * @param $value
      * @return AffiliateException
      */
-    public static function fieldOneIsEmpty($value): AffiliateException
+    public static function nameIsInvalid($value): AffiliateException
     {
-        $message = sprintf(self::INVALID_FIELD1_MESSAGE, $value);
-        $code = self::INVALID_FIELD1_CODE;
+        $message = sprintf(self::INVALID_NAME_MESSAGE, $value);
+        $code = self::INVALID_NAME_CODE;
 
-        return self::buildException('/field1', $message, $code);
+        return self::buildException('/name', $message, $code);
     }
 
     /**
      * @param $value
      * @return AffiliateException
      */
-    public static function fieldTwoIsEmpty($value): AffiliateException
+    public static function lastNameIsInvalid($value): AffiliateException
     {
-        $message = sprintf(self::INVALID_FIELD2_MESSAGE, $value);
-        $code = self::INVALID_FIELD2_CODE;
+        $message = sprintf(self::INVALID_LAST_NAME_MESSAGE, $value);
+        $code = self::INVALID_LAST_NAME_CODE;
 
-        return self::buildException('/field2', $message, $code);
+        return self::buildException('/last_name', $message, $code);
     }
 
     /**
      * @param $value
      * @return AffiliateException
      */
-    public static function fieldThreeIsEmpty($value): AffiliateException
+    public static function emailIsInvalid($value): AffiliateException
     {
-        $message = sprintf(self::INVALID_FIELD3_MESSAGE, $value);
-        $code = self::INVALID_FIELD3_CODE;
+        $message = sprintf(self::INVALID_EMAIL_MESSAGE, $value);
+        $code = self::INVALID_EMAIL_CODE;
 
-        return self::buildException('/field3', $message, $code);
+        return self::buildException('/email', $message, $code);
     }
 
     public static function outOfRangeException($pageNumber)
