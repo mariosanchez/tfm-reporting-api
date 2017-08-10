@@ -63,7 +63,6 @@ class Affiliate
         $this->setLastName(LastName::fromString($lastName));
         $this->setEmail(Email::fromString($email));
         $this->createdAt = new \DateTimeImmutable('now');
-        $this->updatedAt = $this->createdAt;
     }
 
     /**
@@ -139,33 +138,33 @@ class Affiliate
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeImmutable
      */
-    public function getCreatedAt(): ?\DateTime
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
     }
 
     /**
-     * @param \DateTime $createdAt
+     * @param \DateTimeImmutable $createdAt
      */
-    public function setCreatedAt(\DateTime $createdAt)
+    public function setCreatedAt(\DateTimeImmutable $createdAt)
     {
         $this->createdAt = $createdAt;
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeImmutable
      */
-    public function getUpdatedAt(): ?\DateTime
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
     }
 
     /**
-     * @param \DateTime $updatedAt
+     * @param \DateTimeImmutable $updatedAt
      */
-    public function setUpdatedAt(\DateTime $updatedAt)
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt)
     {
         $this->updatedAt = $updatedAt;
     }
@@ -183,7 +182,7 @@ class Affiliate
      */
     public function updatedTimestamps()
     {
-        $this->setUpdatedAt(new \DateTime('now'));
+        $this->setUpdatedAt(new \DateTimeImmutable('now'));
     }
 
     /**
@@ -202,6 +201,11 @@ class Affiliate
     public function verify()
     {
         $this->statusId = self::AFFILIATE_STATUS_ENABLED;
+    }
+
+    public function disable()
+    {
+        $this->statusId = self::AFFILIATE_STATUS_DISABLED;
     }
 
     /**

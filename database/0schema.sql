@@ -12,12 +12,12 @@ CREATE TABLE admin (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 CREATE TABLE affiliate_status (
-  affiliate_status_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  affiliate_status_id TINYINT UNSIGNED NOT NULL,
   name VARCHAR(255) COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (affiliate_status_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
-INSERT INTO `reporting`.`affiliate_status` (`affiliate_status_id`, `name`) VALUES (null, 'disabled'), (null, 'enabled'), (null, 'unverified');
+INSERT INTO `reporting`.`affiliate_status` (`affiliate_status_id`, `name`) VALUES (0, 'disabled'), (1, 'enabled'), (2, 'unverified');
 
 CREATE TABLE affiliate (
   affiliate_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,

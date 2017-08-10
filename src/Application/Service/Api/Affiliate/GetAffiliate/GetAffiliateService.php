@@ -5,6 +5,7 @@ namespace ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\AffiliateApiException;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GuardAffiliateDisabled;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GuardAffiliateNotFound;
+use ParkimeterAffiliates\Domain\Model\Affiliate;
 use ParkimeterAffiliates\Domain\Model\AffiliateRepository;
 
 final class GetAffiliateService
@@ -34,10 +35,9 @@ final class GetAffiliateService
     public function __invoke(GetAffiliateRequest $request): GetAffiliateResponse
     {
         try {
-            $affiliate = $this->repository->find($request->affiliateId());
+            $affiliate = $this->repository->findById($request->affiliateId());
 
-            GuardAffiliateNotFound::guard($affiliate, $request->affiliateId());
-            GuardAffiliateDisabled::guard($affiliate);
+            $this->getGuard($request->affiliateId(), $affiliate);
 
             return new GetAffiliateResponse(
                 $affiliate->getId(),
@@ -50,5 +50,15 @@ final class GetAffiliateService
         } catch (\Exception $e) {
             throw AffiliateApiException::fromException($e);
         }
+    }
+
+    /**
+     * @param int $id
+     * @param Affiliate $affiliate
+     */
+    private function getGuard(int $id, Affiliate $affiliate):void
+    {
+        GuardAffiliateNotFound::guard($affiliate, $id);
+        GuardAffiliateDisabled::guard($affiliate);
     }
 }

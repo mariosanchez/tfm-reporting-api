@@ -15,6 +15,11 @@ services:
     arguments:
       - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository'
 
+  ParkimeterAffiliates\Application\Service\Api\Affiliate\DeleteAffiliate\DeleteAffiliateService:
+    class: ParkimeterAffiliates\Application\Service\Api\Affiliate\DeleteAffiliate\DeleteAffiliateService
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository'
+
 # INFRASTRUCTURE
   ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository:
     class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository

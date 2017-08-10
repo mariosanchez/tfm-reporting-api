@@ -1,17 +1,14 @@
 <?php
 
-namespace ParkimeterAffiliates\Application\Service\Api\Affiliate\PutAffiliate;
+namespace ParkimeterAffiliates\Application\Service\Api\Affiliate\DeleteAffiliate;
 
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\AffiliateApiException;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GuardAffiliateNotFound;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GuardAffiliateDisabled;
 use ParkimeterAffiliates\Domain\Model\Affiliate;
 use ParkimeterAffiliates\Domain\Model\AffiliateRepository;
-use ParkimeterAffiliates\Domain\Model\Attributes\Email;
-use ParkimeterAffiliates\Domain\Model\Attributes\LastName;
-use ParkimeterAffiliates\Domain\Model\Attributes\Name;
 
-final class PutAffiliateService
+final class DeleteAffiliateService
 {
     /**
      * @var AffiliateRepository
@@ -19,7 +16,7 @@ final class PutAffiliateService
     private $repository;
 
     /**
-     * PutAffiliateService constructor
+     * DeleteAffiliateService constructor
      * @param AffiliateRepository $repository
      */
     public function __construct(
@@ -31,19 +28,17 @@ final class PutAffiliateService
     /**
      * Returns a affiliate by given data
      *
-     * @param PutAffiliateRequest $request
+     * @param DeleteAffiliateRequest $request
      * @throws AffiliateApiException
      */
-    public function __invoke(PutAffiliateRequest $request)
+    public function __invoke(DeleteAffiliateRequest $request)
     {
         try {
             $affiliate = $this->repository->findById($request->affiliateId());
 
-            $this->putGuard($request->affiliateId(), $affiliate);
+            $this->deleteGuard($request->affiliateId(), $affiliate);
 
-            $affiliate->setName(Name::fromString($request->name()));
-            $affiliate->setLastName(LastName::fromString($request->lastName()));
-            $affiliate->setEmail(Email::fromString($request->email()));
+            $affiliate->disable();
 
             $this->repository->save($affiliate);
         } catch (\Exception $e) {
@@ -55,7 +50,7 @@ final class PutAffiliateService
      * @param int $id
      * @param Affiliate $affiliate
      */
-    private function putGuard(int $id, Affiliate $affiliate):void
+    private function deleteGuard(int $id, Affiliate $affiliate):void
     {
         GuardAffiliateNotFound::guard($affiliate, $id);
         GuardAffiliateDisabled::guard($affiliate);
