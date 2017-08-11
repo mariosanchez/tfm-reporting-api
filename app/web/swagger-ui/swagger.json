@@ -148,6 +148,58 @@
             }
         },
         "/affiliates/": {
+            "get": {
+                "tags": [
+                    "Affiliates"
+                ],
+                "summary": "Returns a paginated list of affiliates.",
+                "operationId": "getManyAffiliate",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "per-page",
+                        "in": "query",
+                        "description": "Number of results per page",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerGetManySuccessResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    }
+                }
+            },
             "post": {
                 "tags": [
                     "Affiliates"
@@ -251,6 +303,31 @@
                 },
                 "_links": {
                     "$ref": "#/definitions/SwaggerSelfLink"
+                }
+            },
+            "type": "object"
+        },
+        "SwaggerGetManySuccessResponse": {
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "format": "int"
+                },
+                "total": {
+                    "type": "integer",
+                    "format": "int"
+                },
+                "_embedded": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SwaggerGetAffiliateSuccessResponse"
+                    }
+                },
+                "_links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SwaggerLinks"
+                    }
                 }
             },
             "type": "object"

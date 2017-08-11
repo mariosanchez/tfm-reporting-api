@@ -41,7 +41,7 @@ class DeleteController extends Controller
     private $errorSerializer;
 
     /**
-     * DeleteAllController constructor.
+     * DeleteController constructor.
      * @param ContainerInterface $container
      * @param DeleteAffiliateService $service
      * @param Serializer $serializer

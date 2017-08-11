@@ -41,7 +41,7 @@ class GetController extends Controller
     private $errorSerializer;
 
     /**
-     * GetAllController constructor.
+     * GetController constructor.
      * @param ContainerInterface $container
      * @param GetAffiliateService $service
      * @param Serializer $serializer

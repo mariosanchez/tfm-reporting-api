@@ -38,7 +38,7 @@ class PostController extends Controller
     private $errorSerializer;
 
     /**
-     * PostAllController constructor.
+     * PostController constructor.
      * @param ContainerInterface $container
      * @param PostAffiliateService $service
      * @param Serializer $serializer
