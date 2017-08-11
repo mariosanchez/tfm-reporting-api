@@ -1,3 +1,8 @@
+affiliate_get_many:
+    path:     /
+    defaults: { _controller: "ParkimeterAffiliatesAffiliateBundle:GetMany:getMany" }
+    methods:  GET
+
 affiliate_get:
     path:     /{id}
     defaults: { _controller: "ParkimeterAffiliatesAffiliateBundle:Get:get" }

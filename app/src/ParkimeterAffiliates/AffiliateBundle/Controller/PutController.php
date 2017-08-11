@@ -41,7 +41,7 @@ class PutController extends Controller
     private $errorSerializer;
 
     /**
-     * PutAllController constructor.
+     * PutController constructor.
      * @param ContainerInterface $container
      * @param PutAffiliateService $service
      * @param Serializer $serializer

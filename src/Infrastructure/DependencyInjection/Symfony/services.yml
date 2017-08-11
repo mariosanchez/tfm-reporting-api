@@ -5,6 +5,12 @@ services:
     arguments:
       - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository'
 
+  ParkimeterAffiliates\Application\Service\Api\Affiliate\GetManyAffiliate\GetManyAffiliateService:
+    class: ParkimeterAffiliates\Application\Service\Api\Affiliate\GetManyAffiliate\GetManyAffiliateService
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository'
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator'
+
   ParkimeterAffiliates\Application\Service\Api\Affiliate\PostAffiliate\PostAffiliateService:
     class: ParkimeterAffiliates\Application\Service\Api\Affiliate\PostAffiliate\PostAffiliateService
     arguments:
@@ -29,3 +35,6 @@ services:
 
   ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer:
     class: ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer
+
+  ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator:
+    class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator

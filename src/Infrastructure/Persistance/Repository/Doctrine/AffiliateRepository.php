@@ -2,6 +2,7 @@
 
 namespace ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine;
 
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Domain\Model\AffiliateRepository as AffiliateRepositoryInterface;
 use ParkimeterAffiliates\Domain\Model\Affiliate;
 use \Doctrine\ORM\EntityRepository;
@@ -38,6 +39,28 @@ class AffiliateRepository extends EntityRepository implements AffiliateRepositor
             array(),
             isset($orderBy) ? $orderBy : array()
         );
+    }
+
+    /**
+     * @param int $firstResult
+     * @param int $maxResult
+     * @return Paginator
+     */
+    public function findAllPaginated(int $firstResult, int $maxResult): Paginator
+    {
+        $entityManager = $this->getEntityManager();
+
+        $statusEnabled = Affiliate::AFFILIATE_STATUS_DISABLED;
+
+        $dql = "SELECT a 
+                FROM ParkimeterAffiliates\Domain\Model\Affiliate a
+                WHERE a.statusId != $statusEnabled";
+
+        $query = $entityManager->createQuery($dql)
+            ->setFirstResult($firstResult)
+            ->setMaxResults($maxResult);
+
+        return new Paginator($query, $fetchJoinCollection = true);
     }
 
     /**
