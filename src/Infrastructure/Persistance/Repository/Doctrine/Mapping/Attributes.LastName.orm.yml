@@ -1,4 +1,4 @@
-ParkimeterAffiliates\Domain\Model\Attributes\LastName:
+ParkimeterAffiliates\Domain\Model\Affiliate\Attributes\LastName:
     type: embeddable
     fields:
         lastName:

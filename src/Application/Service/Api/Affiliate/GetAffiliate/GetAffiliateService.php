@@ -5,8 +5,8 @@ namespace ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\AffiliateApiException;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GuardAffiliateDisabled;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GuardAffiliateNotFound;
-use ParkimeterAffiliates\Domain\Model\Affiliate;
-use ParkimeterAffiliates\Domain\Model\AffiliateRepository;
+use ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate;
+use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateRepository;
 
 final class GetAffiliateService
 {

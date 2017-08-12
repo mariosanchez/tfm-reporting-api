@@ -1,10 +1,10 @@
 <?php
 
-namespace ParkimeterAffiliates\Domain\Model\Attributes;
+namespace ParkimeterAffiliates\Domain\Model\Affiliate\Attributes;
 
 use Exception;
 use Assert\Assertion;
-use ParkimeterAffiliates\Domain\Model\AffiliateException;
+use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateException;
 
 final class Name
 {

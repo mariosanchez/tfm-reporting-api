@@ -1,4 +1,4 @@
-ParkimeterAffiliates\Domain\Model\Attributes\Name:
+ParkimeterAffiliates\Domain\Model\Affiliate\Attributes\Name:
     type: embeddable
     fields:
         name:

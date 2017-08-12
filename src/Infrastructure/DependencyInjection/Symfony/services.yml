@@ -31,7 +31,7 @@ services:
     class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository
     factory: ["@doctrine", getRepository]
     arguments:
-      - 'ParkimeterAffiliates\Domain\Model\Affiliate'
+      - 'ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate'
 
   ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer:
     class: ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer

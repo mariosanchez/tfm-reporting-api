@@ -3,8 +3,8 @@
 namespace ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine;
 
 use Doctrine\ORM\Tools\Pagination\Paginator;
-use ParkimeterAffiliates\Domain\Model\AffiliateRepository as AffiliateRepositoryInterface;
-use ParkimeterAffiliates\Domain\Model\Affiliate;
+use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateRepository as AffiliateRepositoryInterface;
+use ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate;
 use \Doctrine\ORM\EntityRepository;
 
 /**
@@ -53,7 +53,7 @@ class AffiliateRepository extends EntityRepository implements AffiliateRepositor
         $statusEnabled = Affiliate::AFFILIATE_STATUS_DISABLED;
 
         $dql = "SELECT a 
-                FROM ParkimeterAffiliates\Domain\Model\Affiliate a
+                FROM ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate a
                 WHERE a.statusId != $statusEnabled";
 
         $query = $entityManager->createQuery($dql)
