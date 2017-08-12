@@ -1,10 +1,10 @@
 <?php
 
-namespace ParkimeterAffiliates\Domain\Model;
+namespace ParkimeterAffiliates\Domain\Model\Affiliate;
 
-use ParkimeterAffiliates\Domain\Model\Attributes\Email;
-use ParkimeterAffiliates\Domain\Model\Attributes\LastName;
-use ParkimeterAffiliates\Domain\Model\Attributes\Name;
+use ParkimeterAffiliates\Domain\Model\Affiliate\Attributes\Email;
+use ParkimeterAffiliates\Domain\Model\Affiliate\Attributes\LastName;
+use ParkimeterAffiliates\Domain\Model\Affiliate\Attributes\Name;
 
 /**
  * Affiliate

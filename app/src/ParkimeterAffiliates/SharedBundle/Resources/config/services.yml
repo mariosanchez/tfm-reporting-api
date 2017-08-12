@@ -1,4 +1,13 @@
-services:
-#    parkimeter_affiliates_shared.example:
-#        class: ParkimeterAffiliatesSharedBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+doctrine:
+  orm:
+    mappings:
+      Affiliate:
+        mapping: true
+        type: yml
+        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistance/Repository/Doctrine/Mapping'
+        prefix: 'ParkimeterAffiliates\Domain\Model\Affiliate'
+        is_bundle: false
+
+nilportugues_hal_json:
+    mappings:
+      - "@ParkimeterAffiliatesAffiliateBundle/Resources/serializer"

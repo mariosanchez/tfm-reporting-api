@@ -5,11 +5,11 @@ namespace ParkimeterAffiliates\Application\Service\Api\Affiliate\PutAffiliate;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\AffiliateApiException;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GuardAffiliateNotFound;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GuardAffiliateDisabled;
-use ParkimeterAffiliates\Domain\Model\Affiliate;
-use ParkimeterAffiliates\Domain\Model\AffiliateRepository;
-use ParkimeterAffiliates\Domain\Model\Attributes\Email;
-use ParkimeterAffiliates\Domain\Model\Attributes\LastName;
-use ParkimeterAffiliates\Domain\Model\Attributes\Name;
+use ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate;
+use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateRepository;
+use ParkimeterAffiliates\Domain\Model\Affiliate\Attributes\Email;
+use ParkimeterAffiliates\Domain\Model\Affiliate\Attributes\LastName;
+use ParkimeterAffiliates\Domain\Model\Affiliate\Attributes\Name;
 
 final class PutAffiliateService
 {

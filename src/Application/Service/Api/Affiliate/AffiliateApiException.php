@@ -3,7 +3,7 @@
 
 namespace ParkimeterAffiliates\Application\Service\Api\Affiliate;
 
-use ParkimeterAffiliates\Domain\Model\AffiliateException;
+use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateException;
 use ParkimeterAffiliates\Domain\Model\ErrorBag;
 use Exception;
 

@@ -37,20 +37,18 @@ class GetManyAffiliateResponse
      * @param array|null $content
      * @param int|null $page
      * @param int|null $perPage
-     * @param int|null $totalPages
      * @param int|null $totalElements
      */
     public function __construct(
         ?array $content,
         ?int $page,
         ?int $perPage,
-        ?int $totalPages,
         ?int $totalElements
     ) {
         $this->content = $content;
         $this->page = (int) $page;
         $this->perPage = (int) $perPage;
-        $this->totalPages = (int) $totalPages;
+        $this->totalPages = (int) $this->calculateTotalPages();
         $this->totalElements = (int) $totalElements;
     }
 
@@ -120,5 +118,15 @@ class GetManyAffiliateResponse
         $nextPage = $this->page() + 1;
 
         return ($nextPage < $this->totalPages) ? $nextPage : $this->totalPages;
+    }
+
+    /**
+     * @return int
+     */
+    private function calculateTotalPages(): int
+    {
+        $elementPerPageRelation = ($this->totalElements / $this->perPage);
+
+        return  $elementPerPageRelation < self::DEFAULT_FIRST_PAGE ? self::DEFAULT_FIRST_PAGE : $elementPerPageRelation;
     }
 }

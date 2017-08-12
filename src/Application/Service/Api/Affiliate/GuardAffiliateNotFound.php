@@ -2,8 +2,8 @@
 
 namespace ParkimeterAffiliates\Application\Service\Api\Affiliate;
 
-use ParkimeterAffiliates\Domain\Model\Affiliate;
-use ParkimeterAffiliates\Domain\Model\AffiliateException;
+use ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate;
+use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateException;
 
 class GuardAffiliateNotFound
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ParkimeterAffiliates\Domain\Model;
+namespace ParkimeterAffiliates\Domain\Model\Affiliate;
 
 use ParkimeterAffiliates\Domain\AffiliateDomainException;
 
