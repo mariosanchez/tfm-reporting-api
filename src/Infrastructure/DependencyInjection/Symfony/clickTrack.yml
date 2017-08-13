@@ -5,6 +5,13 @@ services:
     arguments:
       - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ClickTrack\ClickTrackRepository'
 
+  ParkimeterAffiliates\Application\Service\Api\ClickTrack\GetManyClickTrack\GetManyClickTrackService:
+    class: ParkimeterAffiliates\Application\Service\Api\ClickTrack\GetManyClickTrack\GetManyClickTrackService
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ClickTrack\ClickTrackRepository'
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator'
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterListBuilder'
+
 # INFRASTRUCTURE
   ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ClickTrack\ClickTrackRepository:
     class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ClickTrack\ClickTrackRepository

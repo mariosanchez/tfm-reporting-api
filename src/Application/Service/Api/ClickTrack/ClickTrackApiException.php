@@ -35,11 +35,9 @@ final class ClickTrackApiException extends Exception
 
         $message = $e->getMessage();
         switch ($e->getCode()) {
-            case ClickTrackException::IMMUTABLE_ID_CODE:
             case ClickTrackException::VALIDATION_ERROR_CODE:
                 $code = 400;
                 break;
-
             case ClickTrackException::NOT_FOUND_CLICK_TRACK_ID_CODE:
                 $code = 404;
                 break;
