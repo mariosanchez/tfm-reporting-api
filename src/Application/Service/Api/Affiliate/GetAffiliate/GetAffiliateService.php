@@ -54,9 +54,9 @@ final class GetAffiliateService
 
     /**
      * @param int $id
-     * @param Affiliate $affiliate
+     * @param null|Affiliate $affiliate
      */
-    private function getGuard(int $id, Affiliate $affiliate):void
+    private function getGuard(int $id, ?Affiliate $affiliate):void
     {
         GuardAffiliateNotFound::guard($affiliate, $id);
         GuardAffiliateDisabled::guard($affiliate);

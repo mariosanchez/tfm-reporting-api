@@ -5,6 +5,7 @@
     "autoload": {
         "psr-4": {
             "ParkimeterAffiliates\\AffiliateBundle\\": "app/src/ParkimeterAffiliates/AffiliateBundle/",
+            "ParkimeterAffiliates\\ClickTrackBundle\\": "app/src/ParkimeterAffiliates/ClickTrackBundle/",
             "ParkimeterAffiliates\\SharedBundle\\": "app/src/ParkimeterAffiliates/SharedBundle/",
             "ParkimeterAffiliates\\": "src/"
         },

@@ -53,9 +53,9 @@ final class PutAffiliateService
 
     /**
      * @param int $id
-     * @param Affiliate $affiliate
+     * @param null|Affiliate $affiliate
      */
-    private function putGuard(int $id, Affiliate $affiliate):void
+    private function putGuard(int $id, ?Affiliate $affiliate):void
     {
         GuardAffiliateNotFound::guard($affiliate, $id);
         GuardAffiliateDisabled::guard($affiliate);

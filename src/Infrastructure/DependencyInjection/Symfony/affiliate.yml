@@ -1,0 +1,34 @@
+services:
+# APPLICATION
+  ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateService:
+    class: ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateService
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Affiliate\AffiliateRepository'
+
+  ParkimeterAffiliates\Application\Service\Api\Affiliate\GetManyAffiliate\GetManyAffiliateService:
+    class: ParkimeterAffiliates\Application\Service\Api\Affiliate\GetManyAffiliate\GetManyAffiliateService
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Affiliate\AffiliateRepository'
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator'
+
+  ParkimeterAffiliates\Application\Service\Api\Affiliate\PostAffiliate\PostAffiliateService:
+    class: ParkimeterAffiliates\Application\Service\Api\Affiliate\PostAffiliate\PostAffiliateService
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Affiliate\AffiliateRepository'
+
+  ParkimeterAffiliates\Application\Service\Api\Affiliate\PutAffiliate\PutAffiliateService:
+    class: ParkimeterAffiliates\Application\Service\Api\Affiliate\PutAffiliate\PutAffiliateService
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Affiliate\AffiliateRepository'
+
+  ParkimeterAffiliates\Application\Service\Api\Affiliate\DeleteAffiliate\DeleteAffiliateService:
+    class: ParkimeterAffiliates\Application\Service\Api\Affiliate\DeleteAffiliate\DeleteAffiliateService
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Affiliate\AffiliateRepository'
+
+# INFRASTRUCTURE
+  ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Affiliate\AffiliateRepository:
+    class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Affiliate\AffiliateRepository
+    factory: ["@doctrine", getRepository]
+    arguments:
+      - 'ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate'

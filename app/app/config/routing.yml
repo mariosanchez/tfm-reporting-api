@@ -3,3 +3,6 @@ parkimeter_affiliates_shared:
 
 parkimeter_affiliates_affiliate:
     resource: "@ParkimeterAffiliatesAffiliateBundle/Resources/config/routing.yml"
+
+parkimeter_affiliates_click_track:
+    resource: "@ParkimeterAffiliatesClickTrackBundle/Resources/config/routing.yml"

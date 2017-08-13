@@ -1,6 +1,6 @@
 <?php
 
-namespace ParkimeterAffiliates\AffiliateBundle\CompilerPass;
+namespace ParkimeterAffiliates\SharedBundle\CompilerPass;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

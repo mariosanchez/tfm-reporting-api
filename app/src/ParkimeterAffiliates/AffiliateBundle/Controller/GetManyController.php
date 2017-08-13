@@ -88,7 +88,7 @@ class GetManyController extends Controller
      *  @Swagger\Annotations\Response(
      *     response=200,
      *     description="Success",
-     *     @Swagger\Annotations\Schema(ref="#/definitions/SwaggerGetManySuccessResponse"),
+     *     @Swagger\Annotations\Schema(ref="#/definitions/SwaggerGetManyAffiliateSuccessResponse"),
      *  ),
      *  @Swagger\Annotations\Response(
      *     response="400",

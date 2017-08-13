@@ -1,0 +1,4 @@
+click_track_get:
+    path:     /{id}
+    defaults: { _controller: "ParkimeterAffiliatesClickTrackBundle:Get:get" }
+    methods:  GET

@@ -3,6 +3,6 @@
 
 namespace ParkimeterAffiliates\Domain;
 
-class AffiliateDomainException extends \Exception
+class DomainException extends \Exception
 {
 }

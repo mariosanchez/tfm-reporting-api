@@ -1,7 +1,7 @@
 ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate:
     type: entity
     table: affiliate
-    repositoryClass: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\AffiliateRepository
+    repositoryClass: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Affiliate\AffiliateRepository
     id:
         id:
             type: integer

@@ -1,0 +1,13 @@
+services:
+# APPLICATION
+  ParkimeterAffiliates\Application\Service\Api\ClickTrack\GetClickTrack\GetClickTrackService:
+    class: ParkimeterAffiliates\Application\Service\Api\ClickTrack\GetClickTrack\GetClickTrackService
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ClickTrack\ClickTrackRepository'
+
+# INFRASTRUCTURE
+  ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ClickTrack\ClickTrackRepository:
+    class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ClickTrack\ClickTrackRepository
+    factory: ["@doctrine", getRepository]
+    arguments:
+      - 'ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrack'

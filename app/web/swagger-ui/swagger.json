@@ -1,5 +1,10 @@
 {
     "swagger": "2.0",
+    "info": {
+        "title": "Parkimeter Affiliates Reporting API",
+        "description": "This API is meant to provide developers a rapid way to discover the affiliate tracking data",
+        "version": "1.0.0"
+    },
     "host": "192.168.10.12",
     "basePath": "/app_dev.php",
     "schemes": [
@@ -177,7 +182,7 @@
                     "200": {
                         "description": "Success",
                         "schema": {
-                            "$ref": "#/definitions/SwaggerGetManySuccessResponse"
+                            "$ref": "#/definitions/SwaggerGetManyAffiliateSuccessResponse"
                         }
                     },
                     "400": {
@@ -227,6 +232,53 @@
                     },
                     "400": {
                         "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/click-track/{id}": {
+            "get": {
+                "tags": [
+                    "ClickTrack"
+                ],
+                "summary": "Finds a clickTrack by clickTrackId.",
+                "operationId": "getClickTrack",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Click Track Id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerGetClickTrackSuccessResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
                         "schema": {
                             "$ref": "#/definitions/SwaggerErrorResponse"
                         }
@@ -307,7 +359,7 @@
             },
             "type": "object"
         },
-        "SwaggerGetManySuccessResponse": {
+        "SwaggerGetManyAffiliateSuccessResponse": {
             "properties": {
                 "count": {
                     "type": "integer",
@@ -328,6 +380,34 @@
                     "items": {
                         "$ref": "#/definitions/SwaggerLinks"
                     }
+                }
+            },
+            "type": "object"
+        },
+        "SwaggerGetClickTrackSuccessResponse": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "affiliate_id": {
+                    "type": "integer",
+                    "format": "int"
+                },
+                "affiliate_key": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "click_id": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "_links": {
+                    "$ref": "#/definitions/SwaggerSelfLink"
                 }
             },
             "type": "object"

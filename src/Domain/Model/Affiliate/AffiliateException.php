@@ -2,9 +2,10 @@
 
 namespace ParkimeterAffiliates\Domain\Model\Affiliate;
 
-use ParkimeterAffiliates\Domain\AffiliateDomainException;
+use ParkimeterAffiliates\Domain\DomainException;
+use ParkimeterAffiliates\Domain\Model\ErrorBag;
 
-class AffiliateException extends AffiliateDomainException
+class AffiliateException extends DomainException
 {
     public const VALIDATOR_ERROR = "Value objects validation failed.";
     public const VALIDATION_ERROR_CODE = 400;
@@ -21,9 +22,6 @@ class AffiliateException extends AffiliateDomainException
     public const IMMUTABLE_ID_MESSAGE = "Identity value cannot be changed.";
     public const IMMUTABLE_ID_CODE = 1000;
 
-    public const INVALID_AFFILIATE_ID_MESSAGE = "Provided identifier '%s' is not valid.";
-    public const INVALID_AFFILIATE_ID_MESSAGE_CODE = 1004;
-
     public const NOT_FOUND_AFFILIATE_ID_MESSAGE = "Could not find affiliate with id '%s'.";
     public const NOT_FOUND_AFFILIATE_ID_CODE = 404;
 
@@ -36,17 +34,6 @@ class AffiliateException extends AffiliateDomainException
 
     /** @var ErrorBag */
     private static $errorBag;
-
-    /**
-     * @param $value
-     * @return AffiliateException
-     */
-    public static function invalidAffiliateId($value)
-    {
-        $message = sprintf(self::INVALID_AFFILIATE_ID_MESSAGE, $value);
-        $code = self::INVALID_NAME_CODE;
-        return self::buildException('/id', $message, $code);
-    }
 
     /**
      * @param $attribute
