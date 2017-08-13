@@ -366,6 +366,128 @@
                     }
                 }
             }
+        },
+        "/conversion-tracks/{id}": {
+            "get": {
+                "tags": [
+                    "Conversion Tracks"
+                ],
+                "summary": "Finds a conversionTrack by conversionTrackId.",
+                "operationId": "getConversionTrack",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Conversion Track Id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerGetConversionTrackSuccessResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/conversion-tracks/": {
+            "get": {
+                "tags": [
+                    "Conversion Tracks"
+                ],
+                "summary": "Returns a paginated list of conversion tracks.",
+                "operationId": "getManyConversionTrack",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "per-page",
+                        "in": "query",
+                        "description": "Number of results per page",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "affiliate-id",
+                        "in": "query",
+                        "description": "Filter by affiliate-id",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "from-date",
+                        "in": "query",
+                        "description": "Filter by a date of being",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "to-date",
+                        "in": "query",
+                        "description": "Filter by a date of end",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerGetManyConversionTrackSuccessResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -501,6 +623,59 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SwaggerGetClickTrackSuccessResponse"
+                    }
+                },
+                "_links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SwaggerLinks"
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "SwaggerGetConversionTrackSuccessResponse": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "affiliate_id": {
+                    "type": "integer",
+                    "format": "int"
+                },
+                "affiliate_key": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "conversion_id": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "_links": {
+                    "$ref": "#/definitions/SwaggerSelfLink"
+                }
+            },
+            "type": "object"
+        },
+        "SwaggerGetManyConversionTrackSuccessResponse": {
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "format": "int"
+                },
+                "total": {
+                    "type": "integer",
+                    "format": "int"
+                },
+                "_embedded": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SwaggerGetConversionTrackSuccessResponse"
                     }
                 },
                 "_links": {

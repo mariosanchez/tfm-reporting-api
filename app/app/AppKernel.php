@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new NilPortugues\Symfony\HalJsonBundle\NilPortuguesSymfonyHalJsonBundle(),
             new ParkimeterAffiliates\AffiliateBundle\ParkimeterAffiliatesAffiliateBundle(),
             new ParkimeterAffiliates\ClickTrackBundle\ParkimeterAffiliatesClickTrackBundle(),
+            new ParkimeterAffiliates\ConversionTrackBundle\ParkimeterAffiliatesConversionTrackBundle(),
             new ParkimeterAffiliates\SharedBundle\ParkimeterAffiliatesSharedBundle(),
         ];
 

@@ -1,0 +1,20 @@
+imports:
+    - {resource: '../../../../../../src/Infrastructure/DependencyInjection/Symfony/services.yml'}
+
+services:
+
+  ParkimeterAffiliates\ConversionTrackBundle\Controller\GetManyController:
+    class: ParkimeterAffiliates\ConversionTrackBundle\Controller\GetManyController
+    arguments:
+      - '@service_container'
+      - '@ParkimeterAffiliates\Application\Service\Api\ConversionTrack\GetManyConversionTrack\GetManyConversionTrackService'
+      - '@nil_portugues.serializer.hal_json_serializer'
+      - '@ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer'
+
+  ParkimeterAffiliates\ConversionTrackBundle\Controller\GetController:
+    class: ParkimeterAffiliates\ConversionTrackBundle\Controller\GetController
+    arguments:
+      - '@service_container'
+      - '@ParkimeterAffiliates\Application\Service\Api\ConversionTrack\GetConversionTrack\GetConversionTrackService'
+      - '@nil_portugues.serializer.hal_json_serializer'
+      - '@ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer'

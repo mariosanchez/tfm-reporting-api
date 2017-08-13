@@ -1,0 +1,12 @@
+mapping:
+  class: ParkimeterAffiliates\Application\Service\Api\ConversionTrack\GetConversionTrack\GetConversionTrackResponse
+  aliased_properties:
+    conversionTrackId: id
+  hide_properties: []
+  id_properties:
+    - conversionTrackId
+  urls:
+    self: conversion_track_get
+  curies:
+    name: example
+    href: http://example.com/docs/rels/{rel}

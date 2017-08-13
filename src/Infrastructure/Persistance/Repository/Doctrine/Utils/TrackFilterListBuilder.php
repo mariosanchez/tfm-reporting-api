@@ -7,7 +7,7 @@ use ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate;
 
 class TrackFilterListBuilder
 {
-    public function __invoke(GetManyClickTrackRequest $request): array
+    public function __invoke($request): array
     {
         $filters = [];
         $filters = $this->buildAffiliateIdFilter($request->affiliateId(), $filters);

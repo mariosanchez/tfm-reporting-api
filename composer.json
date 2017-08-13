@@ -6,6 +6,7 @@
         "psr-4": {
             "ParkimeterAffiliates\\AffiliateBundle\\": "app/src/ParkimeterAffiliates/AffiliateBundle/",
             "ParkimeterAffiliates\\ClickTrackBundle\\": "app/src/ParkimeterAffiliates/ClickTrackBundle/",
+            "ParkimeterAffiliates\\ConversionTrackBundle\\": "app/src/ParkimeterAffiliates/ConversionTrackBundle/",
             "ParkimeterAffiliates\\SharedBundle\\": "app/src/ParkimeterAffiliates/SharedBundle/",
             "ParkimeterAffiliates\\": "src/"
         },
