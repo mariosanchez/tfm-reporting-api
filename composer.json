@@ -7,6 +7,7 @@
             "ParkimeterAffiliates\\AffiliateBundle\\": "app/src/ParkimeterAffiliates/AffiliateBundle/",
             "ParkimeterAffiliates\\ClickTrackBundle\\": "app/src/ParkimeterAffiliates/ClickTrackBundle/",
             "ParkimeterAffiliates\\ConversionTrackBundle\\": "app/src/ParkimeterAffiliates/ConversionTrackBundle/",
+            "ParkimeterAffiliates\\CancellationTrackBundle\\": "app/src/ParkimeterAffiliates/CancellationTrackBundle/",
             "ParkimeterAffiliates\\SharedBundle\\": "app/src/ParkimeterAffiliates/SharedBundle/",
             "ParkimeterAffiliates\\": "src/"
         },

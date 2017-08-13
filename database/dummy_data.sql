@@ -18,3 +18,12 @@ INSERT INTO `reporting`.`conversion_track` (`affiliate_id`, `affiliate_key`, `co
 INSERT INTO `reporting`.`conversion_track` (`affiliate_id`, `affiliate_key`, `conversion_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('17', 256), NOW());
 INSERT INTO `reporting`.`conversion_track` (`affiliate_id`, `affiliate_key`, `conversion_id`, `created_at`) VALUES ('2', 'da60c7fa32b7f3b82248a7cc551add02e7b24218b542651c85fd0a7cf4583869', SHA2('18', 256), NOW());
 INSERT INTO `reporting`.`conversion_track` (`affiliate_id`, `affiliate_key`, `conversion_id`, `created_at`) VALUES ('2', 'da60c7fa32b7f3b82248a7cc551add02e7b24218b542651c85fd0a7cf4583869', SHA2('19', 256), NOW());
+
+INSERT INTO `reporting`.`cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('112', 256), NOW());
+INSERT INTO `reporting`.`cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('113', 256), NOW());
+INSERT INTO `reporting`.`cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('114', 256), NOW());
+INSERT INTO `reporting`.`cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('115', 256), NOW());
+INSERT INTO `reporting`.`cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('116', 256), NOW());
+INSERT INTO `reporting`.`cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('117', 256), NOW());
+INSERT INTO `reporting`.`cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('2', 'da60c7fa32b7f3b82248a7cc551add02e7b24218b542651c85fd0a7cf4583869', SHA2('118', 256), NOW());
+INSERT INTO `reporting`.`cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('2', 'da60c7fa32b7f3b82248a7cc551add02e7b24218b542651c85fd0a7cf4583869', SHA2('119', 256), NOW());

@@ -245,6 +245,128 @@
                 }
             }
         },
+        "/cancellation-tracks/{id}": {
+            "get": {
+                "tags": [
+                    "Cancellation Tracks"
+                ],
+                "summary": "Finds a cancellationTrack by cancellationTrackId.",
+                "operationId": "getCancellationTrack",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Cancellation Track Id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerGetCancellationTrackSuccessResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/cancellation-tracks/": {
+            "get": {
+                "tags": [
+                    "Cancellation Tracks"
+                ],
+                "summary": "Returns a paginated list of cancellation tracks.",
+                "operationId": "getManyCancellationTrack",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "per-page",
+                        "in": "query",
+                        "description": "Number of results per page",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "affiliate-id",
+                        "in": "query",
+                        "description": "Filter by affiliate-id",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "from-date",
+                        "in": "query",
+                        "description": "Filter by a date of being",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "to-date",
+                        "in": "query",
+                        "description": "Filter by a date of end",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerGetManyCancellationTrackSuccessResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/SwaggerErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/click-tracks/{id}": {
             "get": {
                 "tags": [
@@ -570,6 +692,59 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SwaggerGetAffiliateSuccessResponse"
+                    }
+                },
+                "_links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SwaggerLinks"
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "SwaggerGetCancellationTrackSuccessResponse": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "affiliate_id": {
+                    "type": "integer",
+                    "format": "int"
+                },
+                "affiliate_key": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "cancellation_id": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "_links": {
+                    "$ref": "#/definitions/SwaggerSelfLink"
+                }
+            },
+            "type": "object"
+        },
+        "SwaggerGetManyCancellationTrackSuccessResponse": {
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "format": "int"
+                },
+                "total": {
+                    "type": "integer",
+                    "format": "int"
+                },
+                "_embedded": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SwaggerGetCancellationTrackSuccessResponse"
                     }
                 },
                 "_links": {

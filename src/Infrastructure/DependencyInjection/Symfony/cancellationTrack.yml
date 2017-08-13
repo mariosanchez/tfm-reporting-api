@@ -1,0 +1,20 @@
+services:
+# APPLICATION
+  ParkimeterAffiliates\Application\Service\Api\CancellationTrack\GetCancellationTrack\GetCancellationTrackService:
+    class: ParkimeterAffiliates\Application\Service\Api\CancellationTrack\GetCancellationTrack\GetCancellationTrackService
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\CancellationTrack\CancellationTrackRepository'
+
+  ParkimeterAffiliates\Application\Service\Api\CancellationTrack\GetManyCancellationTrack\GetManyCancellationTrackService:
+    class: ParkimeterAffiliates\Application\Service\Api\CancellationTrack\GetManyCancellationTrack\GetManyCancellationTrackService
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\CancellationTrack\CancellationTrackRepository'
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator'
+      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterListBuilder'
+
+# INFRASTRUCTURE
+  ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\CancellationTrack\CancellationTrackRepository:
+    class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\CancellationTrack\CancellationTrackRepository
+    factory: ["@doctrine", getRepository]
+    arguments:
+      - 'ParkimeterAffiliates\Domain\Model\CancellationTrack\CancellationTrack'
