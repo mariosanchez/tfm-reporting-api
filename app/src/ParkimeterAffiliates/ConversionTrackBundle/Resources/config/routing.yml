@@ -1,0 +1,3 @@
+parkimeter_affiliates_conversion_track:
+    resource: "@ParkimeterAffiliatesConversionTrackBundle/Resources/config/routing/conversionTrack.yml"
+    prefix:   /conversion-tracks

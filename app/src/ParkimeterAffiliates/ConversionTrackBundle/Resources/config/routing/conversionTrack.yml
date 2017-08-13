@@ -1,0 +1,9 @@
+conversion_track_get_many:
+    path:     /
+    defaults: { _controller: "ParkimeterAffiliatesConversionTrackBundle:GetMany:getMany" }
+    methods:  GET
+
+conversion_track_get:
+    path:     /{id}
+    defaults: { _controller: "ParkimeterAffiliatesConversionTrackBundle:Get:get" }
+    methods:  GET
