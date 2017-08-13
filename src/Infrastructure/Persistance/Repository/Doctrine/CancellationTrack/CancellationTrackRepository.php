@@ -4,7 +4,9 @@ namespace ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Ca
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
+// @codingStandardsIgnoreStart
 use ParkimeterAffiliates\Domain\Model\CancellationTrack\CancellationTrackRepository as CancellationTrackRepositoryInterface;
+// @codingStandardsIgnoreEnd
 use ParkimeterAffiliates\Domain\Model\CancellationTrack\CancellationTrack;
 use ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterQueryBuilder;
 
