@@ -9,3 +9,9 @@ services:
 
   ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator:
     class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator
+
+  ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterListBuilder:
+    class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterListBuilder
+
+  ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterQueryBuilder:
+    class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterQueryBuilder

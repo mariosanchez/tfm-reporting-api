@@ -2,10 +2,11 @@
 
 namespace ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ClickTrack;
 
+use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrackRepository as ClickTrackRepositoryInterface;
 use ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrack;
-use \Doctrine\ORM\EntityRepository;
+use ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterQueryBuilder;
 
 /**
  * ClickTrackRepository
@@ -44,18 +45,20 @@ class ClickTrackRepository extends EntityRepository implements ClickTrackReposit
     /**
      * @param int $firstResult
      * @param int $maxResult
+     * @param array $filters
      * @return Paginator
      */
-    public function findAllPaginated(int $firstResult, int $maxResult): Paginator
+    public function findAllPaginated(int $firstResult, int $maxResult, array $filters): Paginator
     {
         $entityManager = $this->getEntityManager();
 
+        $dql = "SELECT c 
+                FROM ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrack c
+                ";
 
-        $dql = "SELECT a 
-                FROM ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrack a";
-
-        $query = $entityManager->createQuery($dql)
-            ->setFirstResult($firstResult)
+        $filterQueryBuilder = new TrackFilterQueryBuilder();
+        $query = $filterQueryBuilder($dql, $filters, $entityManager);
+        $query->setFirstResult($firstResult)
             ->setMaxResults($maxResult);
 
         return new Paginator($query, $fetchJoinCollection = true);

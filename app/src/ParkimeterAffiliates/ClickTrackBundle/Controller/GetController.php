@@ -6,10 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use NilPortugues\Symfony\HalJsonBundle\Serializer\HalJsonResponseTrait;
 use ParkimeterAffiliates\Application\Service\Api\ClickTrack\GetClickTrack\GetClickTrackService;
 use ParkimeterAffiliates\Application\Service\Api\ClickTrack\GetClickTrack\GetClickTrackRequest;
 use ParkimeterAffiliates\Application\Service\Api\ClickTrack\ClickTrackApiException;
+use NilPortugues\Symfony\HalJsonBundle\Serializer\HalJsonResponseTrait;
 use NilPortugues\Symfony\HalJsonBundle\Serializer\HalJsonSerializer as Serializer;
 use ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer as ErrorSerializer;
 
@@ -61,11 +61,11 @@ class GetController extends Controller
 
     /**
      * @Swagger\Annotations\Get(
-     *  path="/click-track/{id}",
+     *  path="/click-tracks/{id}",
      *  summary="Finds a clickTrack by clickTrackId.",
      *  operationId="getClickTrack",
      *  produces={"application/json"},
-     *  tags={"ClickTrack"},
+     *  tags={"Click Tracks"},
      *  @Swagger\Annotations\Parameter(
      *      name="id",
      *      in="path",

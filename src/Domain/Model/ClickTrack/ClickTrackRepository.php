@@ -25,7 +25,8 @@ interface ClickTrackRepository
     /**
      * @param int $firstResult
      * @param int $maxResult
+     * @param array $filters
      * @return Paginator
      */
-    public function findAllPaginated(int $firstResult, int $maxResult): Paginator;
+    public function findAllPaginated(int $firstResult, int $maxResult, array $filters): Paginator;
 }

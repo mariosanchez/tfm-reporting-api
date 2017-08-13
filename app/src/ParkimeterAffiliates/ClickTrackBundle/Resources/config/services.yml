@@ -3,6 +3,14 @@ imports:
 
 services:
 
+  ParkimeterAffiliates\ClickTrackBundle\Controller\GetManyController:
+    class: ParkimeterAffiliates\ClickTrackBundle\Controller\GetManyController
+    arguments:
+      - '@service_container'
+      - '@ParkimeterAffiliates\Application\Service\Api\ClickTrack\GetManyClickTrack\GetManyClickTrackService'
+      - '@nil_portugues.serializer.hal_json_serializer'
+      - '@ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer'
+
   ParkimeterAffiliates\ClickTrackBundle\Controller\GetController:
     class: ParkimeterAffiliates\ClickTrackBundle\Controller\GetController
     arguments:
