@@ -1,0 +1,12 @@
+mapping:
+  class: ParkimeterAffiliates\Application\Service\Api\ClickTrack\GetClickTrack\GetClickTrackResponse
+  aliased_properties:
+    clickTrackId: id
+  hide_properties: []
+  id_properties:
+    - clickTrackId
+  urls:
+    self: click_track_get
+  curies:
+    name: example
+    href: http://example.com/docs/rels/{rel}

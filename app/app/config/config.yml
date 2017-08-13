@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@ParkimeterAffiliatesAffiliateBundle/Resources/config/services.yml" }
+    - { resource: "@ParkimeterAffiliatesClickTrackBundle/Resources/config/services.yml" }
     - { resource: "@ParkimeterAffiliatesSharedBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed

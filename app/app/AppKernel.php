@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new NilPortugues\Symfony\HalJsonBundle\NilPortuguesSymfonyHalJsonBundle(),
             new ParkimeterAffiliates\AffiliateBundle\ParkimeterAffiliatesAffiliateBundle(),
+            new ParkimeterAffiliates\ClickTrackBundle\ParkimeterAffiliatesClickTrackBundle(),
             new ParkimeterAffiliates\SharedBundle\ParkimeterAffiliatesSharedBundle(),
         ];
 

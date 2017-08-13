@@ -48,9 +48,9 @@ final class DeleteAffiliateService
 
     /**
      * @param int $id
-     * @param Affiliate $affiliate
+     * @param null|Affiliate $affiliate
      */
-    private function deleteGuard(int $id, Affiliate $affiliate):void
+    private function deleteGuard(int $id, ?Affiliate $affiliate):void
     {
         GuardAffiliateNotFound::guard($affiliate, $id);
         GuardAffiliateDisabled::guard($affiliate);

@@ -5,7 +5,7 @@ namespace ParkimeterAffiliates\AffiliateBundle\Controller\Swagger;
 /**
  * @Swagger\Annotations\Definition(type="object")
  */
-class SwaggerGetManySuccessResponse
+class SwaggerGetManyAffiliateSuccessResponse
 {
     /**
      * @Swagger\Annotations\Property(format="int", property="count")

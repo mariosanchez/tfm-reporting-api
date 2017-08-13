@@ -45,12 +45,12 @@ class Affiliate
     private $email;
 
     /**
-     * @var \DateTimeImmutable
+     * @var \DateTime
      */
     private $createdAt;
 
     /**
-     * @var \DateTimeImmutable
+     * @var \DateTime
      */
     private $updatedAt;
 
@@ -62,7 +62,7 @@ class Affiliate
         $this->setName(Name::fromString($name));
         $this->setLastName(LastName::fromString($lastName));
         $this->setEmail(Email::fromString($email));
-        $this->createdAt = new \DateTimeImmutable('now');
+        $this->createdAt = new \DateTime('now');
     }
 
     /**
@@ -138,33 +138,33 @@ class Affiliate
     }
 
     /**
-     * @return \DateTimeImmutable
+     * @return \DateTime
      */
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): ?\DateTime
     {
         return $this->createdAt;
     }
 
     /**
-     * @param \DateTimeImmutable $createdAt
+     * @param \DateTime $createdAt
      */
-    public function setCreatedAt(\DateTimeImmutable $createdAt)
+    public function setCreatedAt(\DateTime $createdAt)
     {
         $this->createdAt = $createdAt;
     }
 
     /**
-     * @return \DateTimeImmutable
+     * @return \DateTime
      */
-    public function getUpdatedAt(): ?\DateTimeImmutable
+    public function getUpdatedAt(): ?\DateTime
     {
         return $this->updatedAt;
     }
 
     /**
-     * @param \DateTimeImmutable $updatedAt
+     * @param \DateTime $updatedAt
      */
-    public function setUpdatedAt(\DateTimeImmutable $updatedAt)
+    public function setUpdatedAt(\DateTime $updatedAt)
     {
         $this->updatedAt = $updatedAt;
     }
@@ -182,7 +182,7 @@ class Affiliate
      */
     public function updatedTimestamps()
     {
-        $this->setUpdatedAt(new \DateTimeImmutable('now'));
+        $this->setUpdatedAt(new \DateTime('now'));
     }
 
     /**

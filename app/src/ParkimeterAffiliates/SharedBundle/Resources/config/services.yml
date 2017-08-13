@@ -4,10 +4,17 @@ doctrine:
       Affiliate:
         mapping: true
         type: yml
-        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistance/Repository/Doctrine/Mapping'
+        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistance/Repository/Doctrine/Affiliate/Mapping'
         prefix: 'ParkimeterAffiliates\Domain\Model\Affiliate'
+        is_bundle: false
+      ClickTrack:
+        mapping: true
+        type: yml
+        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistance/Repository/Doctrine/ClickTrack/Mapping'
+        prefix: 'ParkimeterAffiliates\Domain\Model\ClickTrack'
         is_bundle: false
 
 nilportugues_hal_json:
     mappings:
       - "@ParkimeterAffiliatesAffiliateBundle/Resources/serializer"
+      - "@ParkimeterAffiliatesClickTrackBundle/Resources/serializer"
