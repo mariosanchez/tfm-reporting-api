@@ -1,0 +1,12 @@
+mapping:
+  class: ParkimeterAffiliates\Application\Service\Api\CancellationTrack\GetCancellationTrack\GetCancellationTrackResponse
+  aliased_properties:
+    cancellationTrackId: id
+  hide_properties: []
+  id_properties:
+    - cancellationTrackId
+  urls:
+    self: cancellation_track_get
+  curies:
+    name: example
+    href: http://example.com/docs/rels/{rel}

@@ -1,0 +1,9 @@
+cancellation_track_get_many:
+    path:     /
+    defaults: { _controller: "ParkimeterAffiliatesCancellationTrackBundle:GetMany:getMany" }
+    methods:  GET
+
+cancellation_track_get:
+    path:     /{id}
+    defaults: { _controller: "ParkimeterAffiliatesCancellationTrackBundle:Get:get" }
+    methods:  GET

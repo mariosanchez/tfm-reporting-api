@@ -1,0 +1,20 @@
+imports:
+    - {resource: '../../../../../../src/Infrastructure/DependencyInjection/Symfony/services.yml'}
+
+services:
+
+  ParkimeterAffiliates\CancellationTrackBundle\Controller\GetManyController:
+    class: ParkimeterAffiliates\CancellationTrackBundle\Controller\GetManyController
+    arguments:
+      - '@service_container'
+      - '@ParkimeterAffiliates\Application\Service\Api\CancellationTrack\GetManyCancellationTrack\GetManyCancellationTrackService'
+      - '@nil_portugues.serializer.hal_json_serializer'
+      - '@ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer'
+
+  ParkimeterAffiliates\CancellationTrackBundle\Controller\GetController:
+    class: ParkimeterAffiliates\CancellationTrackBundle\Controller\GetController
+    arguments:
+      - '@service_container'
+      - '@ParkimeterAffiliates\Application\Service\Api\CancellationTrack\GetCancellationTrack\GetCancellationTrackService'
+      - '@nil_portugues.serializer.hal_json_serializer'
+      - '@ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer'

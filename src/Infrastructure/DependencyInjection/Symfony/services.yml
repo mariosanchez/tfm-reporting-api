@@ -2,6 +2,7 @@ imports:
     - {resource: './affiliate.yml'}
     - {resource: './clickTrack.yml'}
     - {resource: './conversionTrack.yml'}
+    - {resource: './cancellationTrack.yml'}
 
 services:
 # INFRASTRUCTURE

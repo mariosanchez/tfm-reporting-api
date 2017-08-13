@@ -9,3 +9,6 @@ parkimeter_affiliates_click_track:
 
 parkimeter_affiliates_conversion_track:
     resource: "@ParkimeterAffiliatesConversionTrackBundle/Resources/config/routing.yml"
+
+parkimeter_affiliates_cancellation_track:
+    resource: "@ParkimeterAffiliatesCancellationTrackBundle/Resources/config/routing.yml"

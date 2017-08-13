@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new ParkimeterAffiliates\AffiliateBundle\ParkimeterAffiliatesAffiliateBundle(),
             new ParkimeterAffiliates\ClickTrackBundle\ParkimeterAffiliatesClickTrackBundle(),
             new ParkimeterAffiliates\ConversionTrackBundle\ParkimeterAffiliatesConversionTrackBundle(),
+            new ParkimeterAffiliates\CancellationTrackBundle\ParkimeterAffiliatesCancellationTrackBundle(),
             new ParkimeterAffiliates\SharedBundle\ParkimeterAffiliatesSharedBundle(),
         ];
 

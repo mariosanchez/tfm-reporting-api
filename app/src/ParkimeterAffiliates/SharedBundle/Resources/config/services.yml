@@ -19,9 +19,16 @@ doctrine:
         dir: '%kernel.root_dir%/../../src/Infrastructure/Persistance/Repository/Doctrine/ConversionTrack/Mapping'
         prefix: 'ParkimeterAffiliates\Domain\Model\ConversionTrack'
         is_bundle: false
+      CancellationTrack:
+        mapping: true
+        type: yml
+        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistance/Repository/Doctrine/CancellationTrack/Mapping'
+        prefix: 'ParkimeterAffiliates\Domain\Model\CancellationTrack'
+        is_bundle: false
 
 nilportugues_hal_json:
     mappings:
       - "@ParkimeterAffiliatesAffiliateBundle/Resources/serializer"
       - "@ParkimeterAffiliatesClickTrackBundle/Resources/serializer"
       - "@ParkimeterAffiliatesConversionTrackBundle/Resources/serializer"
+      - "@ParkimeterAffiliatesCancellationTrackBundle/Resources/serializer"
