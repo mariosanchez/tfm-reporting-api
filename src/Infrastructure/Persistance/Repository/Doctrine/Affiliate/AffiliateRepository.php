@@ -28,6 +28,27 @@ class AffiliateRepository extends EntityRepository implements AffiliateRepositor
     }
 
     /**
+     * @param string $column
+     * @param string $value
+     * @return null|Affiliate
+     */
+    public function findOneByColumn(string $column, string $value): ?Affiliate
+    {
+        $entityManager = $this->getEntityManager();
+
+        $dql = "SELECT a 
+                FROM ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate a
+                WHERE a.$column = :value";
+
+        $result = $entityManager->createQuery($dql)
+            ->setParameter('value', $value)
+            ->setMaxResults(1)
+            ->getResult();
+
+        return $result ? $result[0] : null;
+    }
+
+    /**
      * Returns all entities
      *
      * @param array $orderBy

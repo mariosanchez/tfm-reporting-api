@@ -19,14 +19,8 @@ class AffiliateException extends DomainException
     public const INVALID_EMAIL_MESSAGE = "Provided value '%s' is considered an empty value or invalid.";
     public const INVALID_EMAIL_CODE = 1003;
 
-    public const IMMUTABLE_ID_MESSAGE = "Identity value cannot be changed.";
-    public const IMMUTABLE_ID_CODE = 1000;
-
     public const NOT_FOUND_AFFILIATE_ID_MESSAGE = "Could not find affiliate with id '%s'.";
     public const NOT_FOUND_AFFILIATE_ID_CODE = 404;
-
-    public const NOT_RESTORE_AFFILIATE_ID_MESSAGE = "Could not restore affiliate with id '%s'.";
-    public const NOT_RESTORE_AFFILIATE_ID_CODE = 404;
 
     public const OUT_OF_RANGE_MESSAGE = "Out of bounds. Page number '%s' could not be found.";
     public const OUT_OF_RANGE_CODE = 1005;
@@ -50,18 +44,6 @@ class AffiliateException extends DomainException
     }
 
     /**
-     * @param $value
-     * @return AffiliateException
-     */
-    public static function immutableAffiliateId($value)
-    {
-        $message = sprintf(self::IMMUTABLE_ID_MESSAGE, $value);
-        $code = self::IMMUTABLE_ID_CODE;
-
-        return self::buildException('/id', $message, $code);
-    }
-
-    /**
      * @param $id
      * @return AffiliateException
      */
@@ -69,18 +51,6 @@ class AffiliateException extends DomainException
     {
         $message = sprintf(self::NOT_FOUND_AFFILIATE_ID_MESSAGE, $id);
         $code = self::NOT_FOUND_AFFILIATE_ID_CODE;
-
-        return self::buildException('/id', $message, $code);
-    }
-
-    /**
-     * @param $id
-     * @return AffiliateException
-     */
-    public static function notRestore($id)
-    {
-        $message = sprintf(self::NOT_RESTORE_AFFILIATE_ID_MESSAGE, $id);
-        $code = self::NOT_RESTORE_AFFILIATE_ID_CODE;
 
         return self::buildException('/id', $message, $code);
     }
