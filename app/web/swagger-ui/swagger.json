@@ -5,7 +5,7 @@
         "description": "This API is meant to provide developers a rapid way to discover the affiliate tracking data",
         "version": "1.0.0"
     },
-    "host": "192.168.10.12",
+    "host": "localhost:8080",
     "basePath": "/app_dev.php",
     "schemes": [
         "http"
