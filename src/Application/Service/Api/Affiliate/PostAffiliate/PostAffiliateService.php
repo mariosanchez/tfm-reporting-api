@@ -50,6 +50,10 @@ final class PostAffiliateService
         }
     }
 
+    /**
+     * @param PostAffiliateRequest $request
+     * @throws AffiliateException
+     */
     private function prePostGuard(PostAffiliateRequest $request)
     {
         $affiliate = $this->repository->findOneByColumn('email.address', $request->email());

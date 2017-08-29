@@ -6,6 +6,7 @@ use ParkimeterAffiliates\Application\Service\Api\Affiliate\AffiliateApiException
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GuardAffiliateNotFound;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GuardAffiliateDisabled;
 use ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate;
+use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateException;
 use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateRepository;
 use ParkimeterAffiliates\Domain\Model\Affiliate\Attributes\Email;
 use ParkimeterAffiliates\Domain\Model\Affiliate\Attributes\LastName;
@@ -37,6 +38,8 @@ final class PutAffiliateService
     public function __invoke(PutAffiliateRequest $request)
     {
         try {
+            $this->prePostGuard($request);
+
             $affiliate = $this->repository->findById($request->affiliateId());
 
             $this->putGuard($request->affiliateId(), $affiliate);
@@ -48,6 +51,18 @@ final class PutAffiliateService
             $this->repository->save($affiliate);
         } catch (\Exception $e) {
             throw AffiliateApiException::fromException($e);
+        }
+    }
+
+    /**
+     * @param PutAffiliateRequest $request
+     * @throws AffiliateException
+     */
+    private function prePostGuard(PutAffiliateRequest $request)
+    {
+        $affiliate = $this->repository->findOneByColumn('email.address', $request->email());
+        if (isset($affiliate)) {
+            throw AffiliateException::emailIsInvalid($request->email());
         }
     }
 
