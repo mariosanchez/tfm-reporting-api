@@ -1,0 +1,5 @@
+imports:
+    - { resource: parameters.yml }
+
+parameters:
+    database_name: reporting_test

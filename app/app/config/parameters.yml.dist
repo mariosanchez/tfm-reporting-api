@@ -1,8 +1,8 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host: 172.17.0.1
+    database_host: mysql
     database_port: 3306
-    database_name: symfony
+    database_name: reporting
     database_user: root
     database_password: root
     mailer_transport: smtp
@@ -10,3 +10,8 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: 3c8cdc3948be080d430ec65629a155b52761b027
+    mongodb_user: tracker
+    mongodb_password: 123456
+    mongodb_host: mongo
+    mongodb_port: 27017
+    mongodb_collection: admin

@@ -12,7 +12,14 @@ interface AffiliateRepository
      * @param int $id
      * @return null|Affiliate
      */
-    public function findById(int $id);
+    public function findById(int $id): ?Affiliate;
+
+    /**
+     * @param string $column
+     * @param string $value
+     * @return null|Affiliate
+     */
+    public function findOneByColumn(string $column, string $value): ?Affiliate;
 
     /**
      * Returns all entities

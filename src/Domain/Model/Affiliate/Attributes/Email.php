@@ -48,6 +48,14 @@ final class Email
     }
 
     /**
+     * @return null|string
+     */
+    public function getAddress(): ?string
+    {
+        return $this->get();
+    }
+
+    /**
      * @return string
      */
     public function __toString()

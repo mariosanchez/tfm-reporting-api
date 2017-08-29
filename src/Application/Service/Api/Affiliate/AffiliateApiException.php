@@ -38,7 +38,6 @@ final class AffiliateApiException extends Exception
             case AffiliateException::INVALID_NAME_CODE:
             case AffiliateException::INVALID_LAST_NAME_CODE:
             case AffiliateException::INVALID_EMAIL_CODE:
-            case AffiliateException::IMMUTABLE_ID_CODE:
             case AffiliateException::VALIDATION_ERROR_CODE:
                 $code = 400;
                 break;
