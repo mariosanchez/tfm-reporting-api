@@ -147,7 +147,7 @@ class GetManyController extends Controller
 
             $response = ($this->service)($dto);
 
-            $page = $this->buildPaginatedResponse($request, $response, 'affiliate_get_many');
+            $page = $this->buildPaginatedResponse($request, $response, 'conversion_track_get_many');
 
             $output = $this->serializer->serialize($page);
         } catch (ConversionTrackApiException $e) {
