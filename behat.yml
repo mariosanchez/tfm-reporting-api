@@ -11,7 +11,7 @@ default:
 
         Rezzza\RestApiBehatExtension\Extension:
             rest:
-                base_url: http://192.168.10.12/app_dev.php/
+                base_url: http://localhost:8080/app_test.php/
                 store_response: true
     testers:
         rerun_cache: /tmp/.behat-cache
@@ -22,8 +22,8 @@ default:
             - Rezzza\RestApiBehatExtension\RestApiContext
             - Rezzza\RestApiBehatExtension\Json\JsonContext
         user:
-            paths: ['./tests/Affiliate/Acceptance/']
+            paths: ['./tests/Acceptance/']
             contexts:
-              - ParkimeterAffiliates\Tests\Affiliate\Acceptance\Context\FeatureContext
+              - ParkimeterAffiliates\Tests\Acceptance\Context\FeatureContext
               - Rezzza\RestApiBehatExtension\RestApiContext
               - Rezzza\RestApiBehatExtension\Json\JsonContext

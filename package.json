@@ -1,7 +1,7 @@
 {
   "scripts": {
     "precommit": "./vendor/bin/phpcs --config-set colors true && ./vendor/bin/phpcs --standard=PSR2 --tab-width=4 --encoding=utf-8 --extensions=php app/src src",
-    "prepush": "./vendor/bin/phpcs --config-set colors true && ./vendor/bin/phpcs --standard=PSR2 --tab-width=4 --encoding=utf-8 --extensions=php app/src src"
+    "prepush": "./vendor/bin/phpcs --config-set colors true && ./vendor/bin/phpcs --standard=PSR2 --tab-width=4 --encoding=utf-8 --extensions=php app/src src && vendor/bin/behat"
   },
   "devDependencies": {
     "husky": "^0.13.4"

@@ -1,0 +1,30 @@
+INSERT INTO `affiliate` (`affiliate_status_id`, `affiliate_key` , `name`, `last_name`, `email`, `created_at`, `updated_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', 'Pepe1', 'Mora1', 'pepe.mora1@mailinator.com', '2017-07-23 11:05:54', '2017-07-23 11:05:54');
+INSERT INTO `affiliate` (`affiliate_status_id`, `affiliate_key` , `name`, `last_name`, `email`, `created_at`, `updated_at`) VALUES ('2', 'da60c7fa32b7f3b82248a7cc551add02e7b24218b542651c85fd0a7cf4583869', 'Pepe2', 'Mora2', 'pepe.mora2@mailinator.com', '2017-07-24 11:05:54', '2017-07-24 11:05:54');
+INSERT INTO `affiliate` (`affiliate_status_id`, `affiliate_key` , `name`, `last_name`, `email`, `created_at`, `updated_at`) VALUES ('1', 'da60c7fa32b7f3b82248a7cc551add02e7b24218b542651c85fd0a7cf4583870', 'Pepe3', 'Mora3', 'pepe.mora3@mailinator.com', '2017-07-25 11:05:54', '2017-07-25 11:05:54');
+
+INSERT INTO `click_track` (`affiliate_id`, `affiliate_key`, `click_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('2', 256), '2017-07-23 11:05:54');
+INSERT INTO `click_track` (`affiliate_id`, `affiliate_key`, `click_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('3', 256), '2017-07-23 11:05:54');
+INSERT INTO `click_track` (`affiliate_id`, `affiliate_key`, `click_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('4', 256), '2017-07-24 11:05:54');
+INSERT INTO `click_track` (`affiliate_id`, `affiliate_key`, `click_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('5', 256), '2017-07-24 11:05:54');
+INSERT INTO `click_track` (`affiliate_id`, `affiliate_key`, `click_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('6', 256), '2017-07-24 11:05:54');
+INSERT INTO `click_track` (`affiliate_id`, `affiliate_key`, `click_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('7', 256), '2017-07-24 11:05:54');
+INSERT INTO `click_track` (`affiliate_id`, `affiliate_key`, `click_id`, `created_at`) VALUES ('2', 'da60c7fa32b7f3b82248a7cc551add02e7b24218b542651c85fd0a7cf4583869', SHA2('8', 256), '2017-07-25 11:05:54');
+INSERT INTO `click_track` (`affiliate_id`, `affiliate_key`, `click_id`, `created_at`) VALUES ('2', 'da60c7fa32b7f3b82248a7cc551add02e7b24218b542651c85fd0a7cf4583869', SHA2('9', 256), '2017-07-25 11:05:54');
+
+INSERT INTO `conversion_track` (`affiliate_id`, `affiliate_key`, `conversion_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('12', 256), '2017-07-23 11:05:54');
+INSERT INTO `conversion_track` (`affiliate_id`, `affiliate_key`, `conversion_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('13', 256), '2017-07-23 11:05:54');
+INSERT INTO `conversion_track` (`affiliate_id`, `affiliate_key`, `conversion_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('14', 256), '2017-07-24 11:05:54');
+INSERT INTO `conversion_track` (`affiliate_id`, `affiliate_key`, `conversion_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('15', 256), '2017-07-24 11:05:54');
+INSERT INTO `conversion_track` (`affiliate_id`, `affiliate_key`, `conversion_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('16', 256), '2017-07-24 11:05:54');
+INSERT INTO `conversion_track` (`affiliate_id`, `affiliate_key`, `conversion_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('17', 256), '2017-07-24 11:05:54');
+INSERT INTO `conversion_track` (`affiliate_id`, `affiliate_key`, `conversion_id`, `created_at`) VALUES ('2', 'da60c7fa32b7f3b82248a7cc551add02e7b24218b542651c85fd0a7cf4583869', SHA2('18', 256), '2017-07-25 11:05:54');
+INSERT INTO `conversion_track` (`affiliate_id`, `affiliate_key`, `conversion_id`, `created_at`) VALUES ('2', 'da60c7fa32b7f3b82248a7cc551add02e7b24218b542651c85fd0a7cf4583869', SHA2('19', 256), '2017-07-25 11:05:54');
+
+INSERT INTO `cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('112', 256), '2017-07-23 11:05:54');
+INSERT INTO `cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('113', 256), '2017-07-23 11:05:54');
+INSERT INTO `cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('114', 256), '2017-07-24 11:05:54');
+INSERT INTO `cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('115', 256), '2017-07-24 11:05:54');
+INSERT INTO `cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('116', 256), '2017-07-24 11:05:54');
+INSERT INTO `cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('1', '557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a', SHA2('117', 256), '2017-07-24 11:05:54');
+INSERT INTO `cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('2', 'da60c7fa32b7f3b82248a7cc551add02e7b24218b542651c85fd0a7cf4583869', SHA2('118', 256), '2017-07-25 11:05:54');
+INSERT INTO `cancellation_track` (`affiliate_id`, `affiliate_key`, `cancellation_id`, `created_at`) VALUES ('2', 'da60c7fa32b7f3b82248a7cc551add02e7b24218b542651c85fd0a7cf4583869', SHA2('119', 256), '2017-07-25 11:05:54');
