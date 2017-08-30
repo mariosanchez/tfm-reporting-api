@@ -15,7 +15,7 @@ Feature: Get many click tracks
       "affiliate_id": "1",
       "affiliate_key": "557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a",
       "click_id": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
-      "crated_at": {
+      "created_at": {
         "date": "2017-07-24 11:05:54.000000",
         "timezone_type": 3,
         "timezone": "UTC"
@@ -31,7 +31,7 @@ Feature: Get many click tracks
       "affiliate_id": "1",
       "affiliate_key": "557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a",
       "click_id": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
-      "crated_at": {
+      "created_at": {
         "date": "2017-07-24 11:05:54.000000",
         "timezone_type": 3,
         "timezone": "UTC"
@@ -47,7 +47,7 @@ Feature: Get many click tracks
       "affiliate_id": "1",
       "affiliate_key": "557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a",
       "click_id": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
-      "crated_at": {
+      "created_at": {
         "date": "2017-07-24 11:05:54.000000",
         "timezone_type": 3,
         "timezone": "UTC"
@@ -63,7 +63,7 @@ Feature: Get many click tracks
       "affiliate_id": "1",
       "affiliate_key": "557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a",
       "click_id": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451",
-      "crated_at": {
+      "created_at": {
         "date": "2017-07-24 11:05:54.000000",
         "timezone_type": 3,
         "timezone": "UTC"
