@@ -2,7 +2,6 @@
 
 namespace ParkimeterAffiliates\Application\Service\Api\CancellationTrack\GetManyCancellationTrack;
 
-use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Application\Service\Api\CancellationTrack\CancellationTrackApiException;
 use ParkimeterAffiliates\Application\Service\Api\CancellationTrack\GetCancellationTrack\GetCancellationTrackResponse;
 use ParkimeterAffiliates\Domain\Model\CancellationTrack\CancellationTrackRepository;
@@ -74,10 +73,10 @@ final class GetManyCancellationTrackService
     }
 
     /**
-     * @param Paginator $paginator
+     * @param \Traversable $paginator
      * @return array
      */
-    private function serializePaginatedResults(Paginator $paginator): array
+    private function serializePaginatedResults(\Traversable $paginator): array
     {
         $content = [];
         foreach ($paginator as $cancellationTrack) {

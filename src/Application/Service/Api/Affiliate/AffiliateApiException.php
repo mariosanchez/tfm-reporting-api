@@ -26,6 +26,8 @@ final class AffiliateApiException extends Exception
             $message = self::INTERNAL_SERVER_ERROR_MESSAGE;
             $code = self::INTERNAL_SERVER_ERROR;
 
+            $message = $e->getMessage();
+
             $exception = new self($message, $code);
             $exception->errorBag = new ErrorBag($message, $code);
             $exception->errorBag->add(null, $message);

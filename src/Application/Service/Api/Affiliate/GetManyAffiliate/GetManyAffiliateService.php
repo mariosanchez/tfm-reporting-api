@@ -2,7 +2,6 @@
 
 namespace ParkimeterAffiliates\Application\Service\Api\Affiliate\GetManyAffiliate;
 
-use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\AffiliateApiException;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateResponse;
 use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateRepository;
@@ -63,10 +62,10 @@ final class GetManyAffiliateService
     }
 
     /**
-     * @param Paginator $paginator
+     * @param \Traversable $paginator
      * @return array
      */
-    private function serializePaginatedResults(Paginator $paginator): array
+    private function serializePaginatedResults(\Traversable $paginator): array
     {
         $content = [];
         foreach ($paginator as $affiliate) {

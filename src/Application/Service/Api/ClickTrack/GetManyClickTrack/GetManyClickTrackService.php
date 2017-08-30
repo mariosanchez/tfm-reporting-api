@@ -2,7 +2,6 @@
 
 namespace ParkimeterAffiliates\Application\Service\Api\ClickTrack\GetManyClickTrack;
 
-use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Application\Service\Api\ClickTrack\ClickTrackApiException;
 use ParkimeterAffiliates\Application\Service\Api\ClickTrack\GetClickTrack\GetClickTrackResponse;
 use ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrackRepository;
@@ -74,10 +73,10 @@ final class GetManyClickTrackService
     }
 
     /**
-     * @param Paginator $paginator
+     * @param \Traversable $paginator
      * @return array
      */
-    private function serializePaginatedResults(Paginator $paginator): array
+    private function serializePaginatedResults(\Traversable $paginator): array
     {
         $content = [];
         foreach ($paginator as $clickTrack) {

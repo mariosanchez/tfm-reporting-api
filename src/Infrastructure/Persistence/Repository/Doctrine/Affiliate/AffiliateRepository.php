@@ -65,9 +65,9 @@ class AffiliateRepository extends EntityRepository implements AffiliateRepositor
     /**
      * @param int $firstResult
      * @param int $maxResult
-     * @return Paginator
+     * @return \Traversable
      */
-    public function findAllPaginated(int $firstResult, int $maxResult): Paginator
+    public function findAllPaginated(int $firstResult, int $maxResult): \Traversable
     {
         $entityManager = $this->getEntityManager();
 

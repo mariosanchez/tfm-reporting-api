@@ -48,9 +48,9 @@ class CancellationTrackRepository extends EntityRepository implements Cancellati
      * @param int $firstResult
      * @param int $maxResult
      * @param array $filters
-     * @return Paginator
+     * @return \Traversable
      */
-    public function findAllPaginated(int $firstResult, int $maxResult, array $filters): Paginator
+    public function findAllPaginated(int $firstResult, int $maxResult, array $filters): \Traversable
     {
         $entityManager = $this->getEntityManager();
 
