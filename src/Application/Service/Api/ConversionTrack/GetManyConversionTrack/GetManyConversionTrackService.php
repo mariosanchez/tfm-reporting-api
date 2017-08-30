@@ -2,12 +2,11 @@
 
 namespace ParkimeterAffiliates\Application\Service\Api\ConversionTrack\GetManyConversionTrack;
 
-use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Application\Service\Api\ConversionTrack\ConversionTrackApiException;
 use ParkimeterAffiliates\Application\Service\Api\ConversionTrack\GetConversionTrack\GetConversionTrackResponse;
 use ParkimeterAffiliates\Domain\Model\ConversionTrack\ConversionTrackRepository;
-use ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator;
-use ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterListBuilder;
+use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\PaginatorOffsetCalculator;
+use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\TrackFilterListBuilder;
 
 final class GetManyConversionTrackService
 {
@@ -74,10 +73,10 @@ final class GetManyConversionTrackService
     }
 
     /**
-     * @param Paginator $paginator
+     * @param \Traversable $paginator
      * @return array
      */
-    private function serializePaginatedResults(Paginator $paginator): array
+    private function serializePaginatedResults(\Traversable $paginator): array
     {
         $content = [];
         foreach ($paginator as $conversionTrack) {

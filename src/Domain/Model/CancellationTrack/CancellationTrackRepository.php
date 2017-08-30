@@ -2,8 +2,6 @@
 
 namespace ParkimeterAffiliates\Domain\Model\CancellationTrack;
 
-use Doctrine\ORM\Tools\Pagination\Paginator;
-
 interface CancellationTrackRepository
 {
     /**
@@ -26,7 +24,7 @@ interface CancellationTrackRepository
      * @param int $firstResult
      * @param int $maxResult
      * @param array $filters
-     * @return Paginator
+     * @return \Traversable
      */
-    public function findAllPaginated(int $firstResult, int $maxResult, array $filters): Paginator;
+    public function findAllPaginated(int $firstResult, int $maxResult, array $filters): \Traversable;
 }

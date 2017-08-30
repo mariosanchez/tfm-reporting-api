@@ -2,8 +2,6 @@
 
 namespace ParkimeterAffiliates\Domain\Model\Affiliate;
 
-use Doctrine\ORM\Tools\Pagination\Paginator;
-
 interface AffiliateRepository
 {
     /**
@@ -32,9 +30,9 @@ interface AffiliateRepository
     /**
      * @param int $firstResult
      * @param int $maxResult
-     * @return Paginator
+     * @return \Traversable
      */
-    public function findAllPaginated(int $firstResult, int $maxResult): Paginator;
+    public function findAllPaginated(int $firstResult, int $maxResult): \Traversable;
 
     /**
      * Persists a affiliate

@@ -1,0 +1,23 @@
+ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrack:
+    type: entity
+    table: click_track
+    repositoryClass: ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\ClickTrack\ClickTrackRepository
+    id:
+        id:
+            type: integer
+            column: click_track_id
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        affiliateId:
+            type: integer
+        affiliateKey:
+            type: string
+            length: 64
+        clickId:
+            type: string
+            length: 64
+        createdAt:
+            type: datetime
+            column: created_at

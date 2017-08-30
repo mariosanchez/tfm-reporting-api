@@ -9,11 +9,11 @@ services:
   ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer:
     class: ParkimeterAffiliates\Infrastructure\Serializers\JsonVndErrorSerializer
 
-  ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator:
-    class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator
+  ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\PaginatorOffsetCalculator:
+    class: ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\PaginatorOffsetCalculator
 
-  ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterListBuilder:
-    class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterListBuilder
+  ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\TrackFilterListBuilder:
+    class: ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\TrackFilterListBuilder
 
-  ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterQueryBuilder:
-    class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterQueryBuilder
+  ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\TrackFilterQueryBuilder:
+    class: ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\TrackFilterQueryBuilder

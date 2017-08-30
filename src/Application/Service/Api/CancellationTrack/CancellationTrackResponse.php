@@ -17,7 +17,7 @@ abstract class CancellationTrackResponse
     protected $cancellationId;
 
     /** @var \DateTime */
-    protected $cratedAt;
+    protected $createdAt;
 
     /**
      * CancellationTrackResponse constructor.
@@ -25,20 +25,20 @@ abstract class CancellationTrackResponse
      * @param null|string $affiliateId
      * @param null|string $affiliateKey
      * @param null|string $cancellationId
-     * @param \DateTime|null $cratedAt
+     * @param \DateTime|null $createdAt
      */
     public function __construct(
         ?string $cancellationTrackId,
         ?string $affiliateId,
         ?string $affiliateKey,
         ?string $cancellationId,
-        ?\DateTime $cratedAt
+        ?\DateTime $createdAt
     ) {
         $this->cancellationTrackId = $cancellationTrackId;
         $this->affiliateId = $affiliateId;
         $this->affiliateKey = $affiliateKey;
         $this->cancellationId = $cancellationId;
-        $this->cratedAt = $cratedAt;
+        $this->createdAt = $createdAt;
     }
 
     /**
@@ -76,8 +76,8 @@ abstract class CancellationTrackResponse
     /**
      * @return \DateTime
      */
-    public function cratedAt(): ?\DateTime
+    public function createdAt(): ?\DateTime
     {
-        return $this->cratedAt;
+        return $this->createdAt;
     }
 }

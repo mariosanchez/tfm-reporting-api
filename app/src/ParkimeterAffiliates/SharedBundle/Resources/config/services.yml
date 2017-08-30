@@ -4,25 +4,25 @@ doctrine:
       Affiliate:
         mapping: true
         type: yml
-        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistance/Repository/Doctrine/Affiliate/Mapping'
+        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistence/Repository/Doctrine/Affiliate/Mapping'
         prefix: 'ParkimeterAffiliates\Domain\Model\Affiliate'
         is_bundle: false
       ClickTrack:
         mapping: true
         type: yml
-        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistance/Repository/Doctrine/ClickTrack/Mapping'
+        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistence/Repository/Doctrine/ClickTrack/Mapping'
         prefix: 'ParkimeterAffiliates\Domain\Model\ClickTrack'
         is_bundle: false
       ConversionTrack:
         mapping: true
         type: yml
-        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistance/Repository/Doctrine/ConversionTrack/Mapping'
+        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistence/Repository/Doctrine/ConversionTrack/Mapping'
         prefix: 'ParkimeterAffiliates\Domain\Model\ConversionTrack'
         is_bundle: false
       CancellationTrack:
         mapping: true
         type: yml
-        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistance/Repository/Doctrine/CancellationTrack/Mapping'
+        dir: '%kernel.root_dir%/../../src/Infrastructure/Persistence/Repository/Doctrine/CancellationTrack/Mapping'
         prefix: 'ParkimeterAffiliates\Domain\Model\CancellationTrack'
         is_bundle: false
 

@@ -65,6 +65,14 @@ class Affiliate
         $this->createdAt = new \DateTime('now');
     }
 
+    public static function create(
+        string $name,
+        string $lastName,
+        string $email
+    ) {
+        return new self($name, $lastName, $email);
+    }
+
     /**
      * @return int
      */

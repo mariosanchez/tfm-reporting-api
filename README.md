@@ -16,7 +16,7 @@
     │   └── Model
     └── Infrastructure
         ├── DependencyInjection
-        └── Persistance
+        └── Persistence
             └── Repository
                 └── Doctrine
 ```

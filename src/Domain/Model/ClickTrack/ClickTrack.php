@@ -31,9 +31,40 @@ class ClickTrack
 
     /**
      * ClickTrack constructor.
+     * @param int $id
+     * @param int $affiliateId
+     * @param string $affiliateKey
+     * @param string $clickId
+     * @param \DateTime $createdAt
      */
-    public function __construct()
-    {
+    public function __construct(
+        int $id,
+        int $affiliateId,
+        string $affiliateKey,
+        string $clickId,
+        \DateTime $createdAt
+    ) {
+        $this->id = $id;
+        $this->affiliateId = $affiliateId;
+        $this->affiliateKey = $affiliateKey;
+        $this->clickId = $clickId;
+        $this->createdAt = $createdAt;
+    }
+
+    public static function create(
+        int $id,
+        int $affiliateId,
+        string $affiliateKey,
+        string $clickId,
+        \DateTime $createdAt
+    ) {
+        return new self(
+            $id,
+            $affiliateId,
+            $affiliateKey,
+            $clickId,
+            $createdAt
+        );
     }
 
     /**

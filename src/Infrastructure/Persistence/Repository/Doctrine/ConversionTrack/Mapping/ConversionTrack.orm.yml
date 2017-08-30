@@ -1,0 +1,23 @@
+ParkimeterAffiliates\Domain\Model\ConversionTrack\ConversionTrack:
+    type: entity
+    table: conversion_track
+    repositoryClass: ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\ConversionTrack\ConversionTrackRepository
+    id:
+        id:
+            type: integer
+            column: conversion_track_id
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        affiliateId:
+            type: integer
+        affiliateKey:
+            type: string
+            length: 64
+        conversionId:
+            type: string
+            length: 64
+        createdAt:
+            type: datetime
+            column: created_at
