@@ -3,18 +3,18 @@ services:
   ParkimeterAffiliates\Application\Service\Api\ConversionTrack\GetConversionTrack\GetConversionTrackService:
     class: ParkimeterAffiliates\Application\Service\Api\ConversionTrack\GetConversionTrack\GetConversionTrackService
     arguments:
-      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ConversionTrack\ConversionTrackRepository'
+      - '@ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\ConversionTrack\ConversionTrackRepository'
 
   ParkimeterAffiliates\Application\Service\Api\ConversionTrack\GetManyConversionTrack\GetManyConversionTrackService:
     class: ParkimeterAffiliates\Application\Service\Api\ConversionTrack\GetManyConversionTrack\GetManyConversionTrackService
     arguments:
-      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ConversionTrack\ConversionTrackRepository'
-      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator'
-      - '@ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterListBuilder'
+      - '@ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\ConversionTrack\ConversionTrackRepository'
+      - '@ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\PaginatorOffsetCalculator'
+      - '@ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\TrackFilterListBuilder'
 
 # INFRASTRUCTURE
-  ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ConversionTrack\ConversionTrackRepository:
-    class: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ConversionTrack\ConversionTrackRepository
+  ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\ConversionTrack\ConversionTrackRepository:
+    class: ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\ConversionTrack\ConversionTrackRepository
     factory: ["@doctrine", getRepository]
     arguments:
       - 'ParkimeterAffiliates\Domain\Model\ConversionTrack\ConversionTrack'

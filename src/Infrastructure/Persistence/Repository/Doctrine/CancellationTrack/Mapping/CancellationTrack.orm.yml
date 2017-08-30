@@ -1,7 +1,7 @@
 ParkimeterAffiliates\Domain\Model\CancellationTrack\CancellationTrack:
     type: entity
     table: cancellation_track
-    repositoryClass: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\CancellationTrack\CancellationTrackRepository
+    repositoryClass: ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\CancellationTrack\CancellationTrackRepository
     id:
         id:
             type: integer

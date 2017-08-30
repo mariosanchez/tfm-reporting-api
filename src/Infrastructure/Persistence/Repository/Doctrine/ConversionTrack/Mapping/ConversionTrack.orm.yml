@@ -1,11 +1,11 @@
-ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrack:
+ParkimeterAffiliates\Domain\Model\ConversionTrack\ConversionTrack:
     type: entity
-    table: click_track
-    repositoryClass: ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ClickTrack\ClickTrackRepository
+    table: conversion_track
+    repositoryClass: ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\ConversionTrack\ConversionTrackRepository
     id:
         id:
             type: integer
-            column: click_track_id
+            column: conversion_track_id
             id: true
             generator:
                 strategy: AUTO
@@ -15,7 +15,7 @@ ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrack:
         affiliateKey:
             type: string
             length: 64
-        clickId:
+        conversionId:
             type: string
             length: 64
         createdAt:

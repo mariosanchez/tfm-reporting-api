@@ -1,6 +1,6 @@
 <?php
 
-namespace ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Affiliate;
+namespace ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Affiliate;
 
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateRepository as AffiliateRepositoryInterface;

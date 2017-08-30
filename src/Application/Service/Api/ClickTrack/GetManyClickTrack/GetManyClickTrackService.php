@@ -6,8 +6,8 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Application\Service\Api\ClickTrack\ClickTrackApiException;
 use ParkimeterAffiliates\Application\Service\Api\ClickTrack\GetClickTrack\GetClickTrackResponse;
 use ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrackRepository;
-use ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator;
-use ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterListBuilder;
+use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\PaginatorOffsetCalculator;
+use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\TrackFilterListBuilder;
 
 final class GetManyClickTrackService
 {

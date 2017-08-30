@@ -6,7 +6,7 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\AffiliateApiException;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateResponse;
 use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateRepository;
-use ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\PaginatorOffsetCalculator;
+use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\PaginatorOffsetCalculator;
 
 final class GetManyAffiliateService
 {

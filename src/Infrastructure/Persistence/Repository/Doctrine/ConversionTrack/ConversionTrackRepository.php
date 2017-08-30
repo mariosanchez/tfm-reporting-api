@@ -1,12 +1,12 @@
 <?php
 
-namespace ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\ConversionTrack;
+namespace ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\ConversionTrack;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Domain\Model\ConversionTrack\ConversionTrackRepository as ConversionTrackRepositoryInterface;
 use ParkimeterAffiliates\Domain\Model\ConversionTrack\ConversionTrack;
-use ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils\TrackFilterQueryBuilder;
+use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\TrackFilterQueryBuilder;
 
 /**
  * ConversionTrackRepository

@@ -1,6 +1,6 @@
 <?php
 
-namespace ParkimeterAffiliates\Infrastructure\Persistance\Repository\Doctrine\Utils;
+namespace ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Query;

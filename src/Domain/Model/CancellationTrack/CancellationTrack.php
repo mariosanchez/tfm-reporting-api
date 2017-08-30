@@ -31,9 +31,40 @@ class CancellationTrack
 
     /**
      * CancellationTrack constructor.
+     * @param int $id
+     * @param int $affiliateId
+     * @param string $affiliateKey
+     * @param string $cancellationId
+     * @param \DateTime $createdAt
      */
-    public function __construct()
-    {
+    public function __construct(
+        int $id,
+        int $affiliateId,
+        string $affiliateKey,
+        string $cancellationId,
+        \DateTime $createdAt
+    ) {
+        $this->id = $id;
+        $this->affiliateId = $affiliateId;
+        $this->affiliateKey = $affiliateKey;
+        $this->cancellationId = $cancellationId;
+        $this->createdAt = $createdAt;
+    }
+
+    public static function create(
+        int $id,
+        int $affiliateId,
+        string $affiliateKey,
+        string $cancellationId,
+        \DateTime $createdAt
+    ) {
+        return new self(
+            $id,
+            $affiliateId,
+            $affiliateKey,
+            $cancellationId,
+            $createdAt
+        );
     }
 
     /**

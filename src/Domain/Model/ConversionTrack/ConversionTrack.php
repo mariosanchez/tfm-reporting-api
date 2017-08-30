@@ -31,9 +31,40 @@ class ConversionTrack
 
     /**
      * ConversionTrack constructor.
+     * @param int $id
+     * @param int $affiliateId
+     * @param string $affiliateKey
+     * @param string $conversionId
+     * @param \DateTime $createdAt
      */
-    public function __construct()
-    {
+    public function __construct(
+        int $id,
+        int $affiliateId,
+        string $affiliateKey,
+        string $conversionId,
+        \DateTime $createdAt
+    ) {
+        $this->id = $id;
+        $this->affiliateId = $affiliateId;
+        $this->affiliateKey = $affiliateKey;
+        $this->conversionId = $conversionId;
+        $this->createdAt = $createdAt;
+    }
+
+    public static function create(
+        int $id,
+        int $affiliateId,
+        string $affiliateKey,
+        string $conversionId,
+        \DateTime $createdAt
+    ) {
+        return new self(
+            $id,
+            $affiliateId,
+            $affiliateKey,
+            $conversionId,
+            $createdAt
+        );
     }
 
     /**
