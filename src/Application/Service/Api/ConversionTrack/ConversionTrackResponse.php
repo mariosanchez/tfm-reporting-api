@@ -17,7 +17,7 @@ abstract class ConversionTrackResponse
     protected $conversionId;
 
     /** @var \DateTime */
-    protected $cratedAt;
+    protected $createdAt;
 
     /**
      * ConversionTrackResponse constructor.
@@ -25,20 +25,20 @@ abstract class ConversionTrackResponse
      * @param null|string $affiliateId
      * @param null|string $affiliateKey
      * @param null|string $conversionId
-     * @param \DateTime|null $cratedAt
+     * @param \DateTime|null $createdAt
      */
     public function __construct(
         ?string $conversionTrackId,
         ?string $affiliateId,
         ?string $affiliateKey,
         ?string $conversionId,
-        ?\DateTime $cratedAt
+        ?\DateTime $createdAt
     ) {
         $this->conversionTrackId = $conversionTrackId;
         $this->affiliateId = $affiliateId;
         $this->affiliateKey = $affiliateKey;
         $this->conversionId = $conversionId;
-        $this->cratedAt = $cratedAt;
+        $this->createdAt = $createdAt;
     }
 
     /**
@@ -76,8 +76,8 @@ abstract class ConversionTrackResponse
     /**
      * @return \DateTime
      */
-    public function cratedAt(): ?\DateTime
+    public function createdAt(): ?\DateTime
     {
-        return $this->cratedAt;
+        return $this->createdAt;
     }
 }

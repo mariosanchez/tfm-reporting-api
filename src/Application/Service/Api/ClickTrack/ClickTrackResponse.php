@@ -17,7 +17,7 @@ abstract class ClickTrackResponse
     protected $clickId;
 
     /** @var \DateTime */
-    protected $cratedAt;
+    protected $createdAt;
 
     /**
      * ClickTrackResponse constructor.
@@ -32,13 +32,13 @@ abstract class ClickTrackResponse
         ?string $affiliateId,
         ?string $affiliateKey,
         ?string $clickId,
-        ?\DateTime $cratedAt
+        ?\DateTime $createdAt
     ) {
         $this->clickTrackId = $clickTrackId;
         $this->affiliateId = $affiliateId;
         $this->affiliateKey = $affiliateKey;
         $this->clickId = $clickId;
-        $this->cratedAt = $cratedAt;
+        $this->createdAt = $createdAt;
     }
 
     /**
@@ -76,8 +76,8 @@ abstract class ClickTrackResponse
     /**
      * @return \DateTime
      */
-    public function cratedAt(): ?\DateTime
+    public function createdAt(): ?\DateTime
     {
-        return $this->cratedAt;
+        return $this->createdAt;
     }
 }
