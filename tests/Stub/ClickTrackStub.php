@@ -13,14 +13,16 @@ final class ClickTrackStub
         ?int $affiliateId,
         ?string $affiliateKey,
         ?string $clickId,
-        ?\DateTime $createdAt
+        ?\DateTime $createdAt,
+        int $createdAtEpoch
     ) {
         return ClickTrack::create(
             $id,
             $affiliateId,
             $affiliateKey,
             $clickId,
-            $createdAt
+            $createdAt,
+            $createdAtEpoch
         );
     }
 
@@ -31,7 +33,8 @@ final class ClickTrackStub
             Factory::create()->numberBetween(),
             Factory::create()->uuid,
             Factory::create()->uuid,
-            Factory::create()->dateTime
+            Factory::create()->dateTime,
+            Factory::create()->numberBetween()
         );
     }
 }

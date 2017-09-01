@@ -63,4 +63,29 @@ class ClickTrackRepository extends EntityRepository implements ClickTrackReposit
 
         return new Paginator($query, $fetchJoinCollection = true);
     }
+
+    public function saveMany(array $values)
+    {
+        $entityManager = $this->getEntityManager();
+
+        try {
+            $entityManager->beginTransaction();
+
+            foreach ($values as $value) {
+                $id = $value->getId();
+                if (!isset($id)) {
+                    $entityManager->persist($value);
+                }
+            }
+
+            $entityManager->flush();
+
+            $entityManager->commit();
+
+            return $values;
+        } catch (\Exception $e) {
+            $entityManager->rollback();
+            throw $e;
+        }
+    }
 }

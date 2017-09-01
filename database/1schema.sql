@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS conversion_track (
   affiliate_key CHAR(64),
   conversion_id CHAR(64),
   created_at datetime NOT NULL,
+  created_at_epoch BIGINT NOT NULL,
   PRIMARY KEY (conversion_track_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -48,6 +49,7 @@ CREATE TABLE IF NOT EXISTS cancellation_track (
   affiliate_key CHAR(64),
   cancellation_id CHAR(64),
   created_at datetime NOT NULL,
+  created_at_epoch BIGINT NOT NULL,
   PRIMARY KEY (cancellation_track_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -59,6 +61,7 @@ CREATE TABLE IF NOT EXISTS click_track (
   affiliate_key CHAR(64),
   click_id CHAR(64),
   created_at datetime NOT NULL,
+  created_at_epoch BIGINT NOT NULL,
   PRIMARY KEY (click_track_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 

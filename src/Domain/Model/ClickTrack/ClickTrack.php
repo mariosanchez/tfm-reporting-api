@@ -30,47 +30,66 @@ class ClickTrack
     private $createdAt;
 
     /**
+     * @var int
+     */
+    private $createdAtEpoch;
+
+    /**
      * ClickTrack constructor.
-     * @param int $id
+     * @param null|int $id
      * @param int $affiliateId
      * @param string $affiliateKey
      * @param string $clickId
      * @param \DateTime $createdAt
+     * @param int $createdAtEpoch
      */
     public function __construct(
-        int $id,
+        ?int $id,
         int $affiliateId,
         string $affiliateKey,
         string $clickId,
-        \DateTime $createdAt
+        \DateTime $createdAt,
+        int $createdAtEpoch
     ) {
         $this->id = $id;
         $this->affiliateId = $affiliateId;
         $this->affiliateKey = $affiliateKey;
         $this->clickId = $clickId;
         $this->createdAt = $createdAt;
+        $this->createdAtEpoch = $createdAtEpoch;
     }
 
+    /**
+     * @param int|null $id
+     * @param int $affiliateId
+     * @param string $affiliateKey
+     * @param string $clickId
+     * @param \DateTime $createdAt
+     * @param int $createdAtEpoch
+     * @return ClickTrack
+     */
     public static function create(
-        int $id,
+        ?int $id,
         int $affiliateId,
         string $affiliateKey,
         string $clickId,
-        \DateTime $createdAt
+        \DateTime $createdAt,
+        int $createdAtEpoch
     ) {
         return new self(
             $id,
             $affiliateId,
             $affiliateKey,
             $clickId,
-            $createdAt
+            $createdAt,
+            $createdAtEpoch
         );
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -137,5 +156,21 @@ class ClickTrack
     public function setCreatedAt(\DateTime $createdAt)
     {
         $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCreatedAtEpoch(): int
+    {
+        return $this->createdAtEpoch;
+    }
+
+    /**
+     * @param int $createdAtEpoch
+     */
+    public function setCreatedAtEpoch(int $createdAtEpoch)
+    {
+        $this->createdAtEpoch = $createdAtEpoch;
     }
 }

@@ -13,6 +13,16 @@ interface CancellationTrackRepository
     public function findById(int $id);
 
     /**
+     * Finds a single entity by a set of criteria.
+     *
+     * @param array $criteria
+     * @param array|null $orderBy
+     *
+     * @return object|null The entity instance or NULL if the entity can not be found.
+     */
+    public function findOneBy(array $criteria, array $orderBy = null);
+
+    /**
      * Returns all entities
      *
      * @param array $orderBy
@@ -27,4 +37,10 @@ interface CancellationTrackRepository
      * @return \Traversable
      */
     public function findAllPaginated(int $firstResult, int $maxResult, array $filters): \Traversable;
+
+    /**
+     * @param array $values
+     * @return mixed
+     */
+    public function saveMany(array $values);
 }
