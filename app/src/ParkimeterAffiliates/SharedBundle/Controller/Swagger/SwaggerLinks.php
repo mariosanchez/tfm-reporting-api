@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Bandit\UserBundle\Controller\User\Employer\Swagger;
+namespace ParkimeterAffiliates\SharedBundle\Controller\Swagger;
 
 /**
  * @Swagger\Annotations\Definition

@@ -13,14 +13,16 @@ final class ConversionTrackStub
         ?int $affiliateId,
         ?string $affiliateKey,
         ?string $conversionId,
-        ?\DateTime $createdAt
+        ?\DateTime $createdAt,
+        int $createdAtEpoch
     ) {
         return ConversionTrack::create(
             $id,
             $affiliateId,
             $affiliateKey,
             $conversionId,
-            $createdAt
+            $createdAt,
+            $createdAtEpoch
         );
     }
 
@@ -31,7 +33,8 @@ final class ConversionTrackStub
             Factory::create()->numberBetween(),
             Factory::create()->uuid,
             Factory::create()->uuid,
-            Factory::create()->dateTime
+            Factory::create()->dateTime,
+            Factory::create()->numberBetween()
         );
     }
 }

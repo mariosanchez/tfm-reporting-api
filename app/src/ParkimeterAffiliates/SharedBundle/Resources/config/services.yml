@@ -1,3 +1,15 @@
+services:
+
+  ParkimeterAffiliates\SharedBundle\Command\DumpTracksCommand:
+    class: ParkimeterAffiliates\SharedBundle\Command\DumpTracksCommand
+    arguments:
+      - '@ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Affiliate\AffiliateRepository'
+      - '@ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\ClickTrack\ClickTrackRepository'
+      - '@ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\ConversionTrack\ConversionTrackRepository'
+      - '@ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\CancellationTrack\CancellationTrackRepository'
+    tags:
+      -  { name: console.command }
+
 doctrine:
   orm:
     mappings:

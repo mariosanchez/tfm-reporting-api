@@ -21,3 +21,6 @@ ParkimeterAffiliates\Domain\Model\CancellationTrack\CancellationTrack:
         createdAt:
             type: datetime
             column: created_at
+        createdAtEpoch:
+            type: integer
+            column: created_at_epoch

@@ -21,3 +21,6 @@ ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrack:
         createdAt:
             type: datetime
             column: created_at
+        createdAtEpoch:
+            type: integer
+            column: created_at_epoch

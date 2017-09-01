@@ -13,14 +13,16 @@ final class CancellationTrackStub
         ?int $affiliateId,
         ?string $affiliateKey,
         ?string $cancellationId,
-        ?\DateTime $createdAt
+        ?\DateTime $createdAt,
+        int $createdAtEpoch
     ) {
         return CancellationTrack::create(
             $id,
             $affiliateId,
             $affiliateKey,
             $cancellationId,
-            $createdAt
+            $createdAt,
+            $createdAtEpoch
         );
     }
 
@@ -31,7 +33,8 @@ final class CancellationTrackStub
             Factory::create()->numberBetween(),
             Factory::create()->uuid,
             Factory::create()->uuid,
-            Factory::create()->dateTime
+            Factory::create()->dateTime,
+            Factory::create()->numberBetween()
         );
     }
 }
