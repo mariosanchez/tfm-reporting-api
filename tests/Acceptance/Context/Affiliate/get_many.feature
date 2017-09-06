@@ -69,3 +69,47 @@ Feature: Get many affiliates
   }
 }
 """
+
+  Scenario:
+    Given I send a GET request to "/affiliates/?page=1&per-page=3&email=pepe.mora1@mailinator.com"
+    Then the response status code should be 200
+    And the response should be in JSON
+    And the JSON should be equal to:
+"""
+{
+    "count": 1,
+    "total": 1,
+    "_embedded": [
+        {
+            "id": "1",
+            "status_id": 1,
+            "key": "557b0c201096e0d91448c315ea376897582a0fac9799d34c87b0a121245aa33a",
+            "name": "Pepe1",
+            "last_name": "Mora1",
+            "email": "pepe.mora1@mailinator.com",
+            "_links": {
+                "self": {
+                    "href": "/app_test.php/affiliates/1"
+                }
+            }
+        }
+    ],
+    "_links": {
+        "first": {
+            "href": "/app_test.php/affiliates/?email=pepe.mora1%40mailinator.com&page=1&per-page=3"
+        },
+        "self": {
+            "href": "/app_test.php/affiliates/?email=pepe.mora1%40mailinator.com&page=1&per-page=3"
+        },
+        "prev": {
+            "href": "/app_test.php/affiliates/?email=pepe.mora1%40mailinator.com&page=1&per-page=3"
+        },
+        "next": {
+            "href": "/app_test.php/affiliates/?email=pepe.mora1%40mailinator.com&page=1&per-page=3"
+        },
+        "last": {
+            "href": "/app_test.php/affiliates/?email=pepe.mora1%40mailinator.com&page=1&per-page=3"
+        }
+    }
+}
+"""

@@ -176,6 +176,13 @@
                         "description": "Number of results per page",
                         "required": true,
                         "type": "integer"
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Filter by email",
+                        "required": false,
+                        "type": "string"
                     }
                 ],
                 "responses": {

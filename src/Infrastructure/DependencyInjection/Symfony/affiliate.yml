@@ -10,6 +10,7 @@ services:
     arguments:
       - '@ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Affiliate\AffiliateRepository'
       - '@ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\PaginatorOffsetCalculator'
+      - '@ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\AffiliateFilterListBuilder'
 
   ParkimeterAffiliates\Application\Service\Api\Affiliate\PostAffiliate\PostAffiliateService:
     class: ParkimeterAffiliates\Application\Service\Api\Affiliate\PostAffiliate\PostAffiliateService

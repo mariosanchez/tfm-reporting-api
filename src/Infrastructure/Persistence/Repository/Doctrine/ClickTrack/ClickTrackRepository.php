@@ -6,7 +6,7 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrackRepository as ClickTrackRepositoryInterface;
 use ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrack;
-use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\TrackFilterQueryBuilder;
+use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\FilterQueryBuilder;
 
 /**
  * ClickTrackRepository
@@ -56,7 +56,7 @@ class ClickTrackRepository extends EntityRepository implements ClickTrackReposit
                 FROM ParkimeterAffiliates\Domain\Model\ClickTrack\ClickTrack c
                 ";
 
-        $filterQueryBuilder = new TrackFilterQueryBuilder();
+        $filterQueryBuilder = new FilterQueryBuilder();
         $query = $filterQueryBuilder($dql, $filters, $entityManager);
         $query->setFirstResult($firstResult)
             ->setMaxResults($maxResult);
