@@ -5,7 +5,7 @@ namespace ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Ut
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Query;
 
-class TrackFilterQueryBuilder
+class FilterQueryBuilder
 {
     /**
      * @param string $dql
@@ -21,7 +21,7 @@ class TrackFilterQueryBuilder
 
         foreach ($filters as $filter) {
             /**
-             * @var TrackFilter $filter
+             * @var Filter $filter
              */
             $dql = $dql . $filter->query();
         }
@@ -30,7 +30,7 @@ class TrackFilterQueryBuilder
 
         foreach ($filters as $key => $filter) {
             /**
-             * @var TrackFilter $filter
+             * @var Filter $filter
              */
             $query->setParameter($key, $filter->value());
         }

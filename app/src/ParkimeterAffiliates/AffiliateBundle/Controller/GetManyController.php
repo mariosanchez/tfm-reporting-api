@@ -85,6 +85,14 @@ class GetManyController extends Controller
      *      type="integer"
      *  ),
      *
+     *  @Swagger\Annotations\Parameter(
+     *      name="email",
+     *      in="query",
+     *      description="Filter by email",
+     *      required=false,
+     *      type="string"
+     *  ),
+     *
      *  @Swagger\Annotations\Response(
      *     response=200,
      *     description="Success",
@@ -115,7 +123,8 @@ class GetManyController extends Controller
         try {
             $dto = new GetManyAffiliateRequest(
                 $request->get('page', 1),
-                $request->get('per-page', 10)
+                $request->get('per-page', 10),
+                $request->get('email', null)
             );
 
             $response = ($this->service)($dto);

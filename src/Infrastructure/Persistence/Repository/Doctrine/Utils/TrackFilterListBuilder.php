@@ -2,7 +2,6 @@
 
 namespace ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils;
 
-use ParkimeterAffiliates\Application\Service\Api\ClickTrack\GetManyClickTrack\GetManyClickTrackRequest;
 use ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate;
 
 class TrackFilterListBuilder
@@ -30,7 +29,7 @@ class TrackFilterListBuilder
 
         $statusEnabled = Affiliate::AFFILIATE_STATUS_DISABLED;
 
-        $filters['affiliateId'] = new TrackFilter(
+        $filters['affiliateId'] = new Filter(
             $value,
             " AND c.affiliateId = :affiliateId
 AND (SELECT 1 
@@ -53,7 +52,7 @@ AND a.id = :affiliateId) = 1 "
             return $filters;
         }
 
-        $filters['dateFrom'] = new TrackFilter(
+        $filters['dateFrom'] = new Filter(
             date('Ymd', strtotime($value)),
             " AND c.createdAt >= :dateFrom "
         );
@@ -72,7 +71,7 @@ AND a.id = :affiliateId) = 1 "
             return $filters;
         }
 
-        $filters['toFrom'] = new TrackFilter(
+        $filters['toFrom'] = new Filter(
             date('Ymd', strtotime($value)),
             " AND c.createdAt <= :toFrom "
         );

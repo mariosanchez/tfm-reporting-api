@@ -8,7 +8,7 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Domain\Model\CancellationTrack\CancellationTrackRepository as CancellationTrackRepositoryInterface;
 // @codingStandardsIgnoreEnd
 use ParkimeterAffiliates\Domain\Model\CancellationTrack\CancellationTrack;
-use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\TrackFilterQueryBuilder;
+use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\FilterQueryBuilder;
 
 /**
  * CancellationTrackRepository
@@ -58,7 +58,7 @@ class CancellationTrackRepository extends EntityRepository implements Cancellati
                 FROM ParkimeterAffiliates\Domain\Model\CancellationTrack\CancellationTrack c
                 ";
 
-        $filterQueryBuilder = new TrackFilterQueryBuilder();
+        $filterQueryBuilder = new FilterQueryBuilder();
         $query = $filterQueryBuilder($dql, $filters, $entityManager);
         $query->setFirstResult($firstResult)
             ->setMaxResults($maxResult);

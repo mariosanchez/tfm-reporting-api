@@ -30,9 +30,10 @@ interface AffiliateRepository
     /**
      * @param int $firstResult
      * @param int $maxResult
+     * @param array $filters
      * @return \Traversable
      */
-    public function findAllPaginated(int $firstResult, int $maxResult): \Traversable;
+    public function findAllPaginated(int $firstResult, int $maxResult, array $filters): \Traversable;
 
     /**
      * Persists a affiliate

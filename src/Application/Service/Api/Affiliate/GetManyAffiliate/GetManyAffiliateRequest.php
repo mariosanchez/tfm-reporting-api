@@ -15,14 +15,21 @@ class GetManyAffiliateRequest
     private $perPage;
 
     /**
+     * @var string
+     */
+    private $email;
+
+    /**
      * GetManyRequest constructor.
      * @param int|null $page
      * @param int|null $perPage
+     * @param string|null $email
      */
-    public function __construct(?int $page, ?int $perPage)
+    public function __construct(?int $page, ?int $perPage, ?string $email)
     {
         $this->page = (int) $page;
         $this->perPage = (int) $perPage;
+        $this->email = (string) $email;
     }
 
     /**
@@ -39,5 +46,13 @@ class GetManyAffiliateRequest
     public function perPage(): ?int
     {
         return $this->perPage;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function email(): ?string
+    {
+        return $this->email;
     }
 }

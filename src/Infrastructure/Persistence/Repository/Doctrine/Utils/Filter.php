@@ -2,7 +2,7 @@
 
 namespace ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils;
 
-class TrackFilter
+class Filter
 {
     /**
      * @var string $value
@@ -15,7 +15,7 @@ class TrackFilter
     private $query;
 
     /**
-     * TrackFilter constructor.
+     * Filter constructor.
      * @param string $value
      * @param string $query
      */

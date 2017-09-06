@@ -6,7 +6,7 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Domain\Model\ConversionTrack\ConversionTrackRepository as ConversionTrackRepositoryInterface;
 use ParkimeterAffiliates\Domain\Model\ConversionTrack\ConversionTrack;
-use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\TrackFilterQueryBuilder;
+use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\FilterQueryBuilder;
 
 /**
  * ConversionTrackRepository
@@ -56,7 +56,7 @@ class ConversionTrackRepository extends EntityRepository implements ConversionTr
                 FROM ParkimeterAffiliates\Domain\Model\ConversionTrack\ConversionTrack c
                 ";
 
-        $filterQueryBuilder = new TrackFilterQueryBuilder();
+        $filterQueryBuilder = new FilterQueryBuilder();
         $query = $filterQueryBuilder($dql, $filters, $entityManager);
         $query->setFirstResult($firstResult)
             ->setMaxResults($maxResult);

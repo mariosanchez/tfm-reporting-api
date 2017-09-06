@@ -5,6 +5,7 @@ namespace ParkimeterAffiliates\Application\Service\Api\Affiliate\GetManyAffiliat
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\AffiliateApiException;
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GetAffiliate\GetAffiliateResponse;
 use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateRepository;
+use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\AffiliateFilterListBuilder;
 use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\PaginatorOffsetCalculator;
 
 final class GetManyAffiliateService
@@ -20,16 +21,24 @@ final class GetManyAffiliateService
     private $offsetCalculator;
 
     /**
+     * @var AffiliateFilterListBuilder
+     */
+    private $filterListBuilder;
+
+    /**
      * GetManyAffiliateService constructor.
      * @param AffiliateRepository $repository
      * @param PaginatorOffsetCalculator $offsetCalculator
+     * @param AffiliateFilterListBuilder $filterListBuilder
      */
     public function __construct(
         AffiliateRepository $repository,
-        PaginatorOffsetCalculator $offsetCalculator
+        PaginatorOffsetCalculator $offsetCalculator,
+        AffiliateFilterListBuilder $filterListBuilder
     ) {
         $this->repository = $repository;
         $this->offsetCalculator = $offsetCalculator;
+        $this->filterListBuilder = $filterListBuilder;
     }
 
     /**
@@ -43,9 +52,11 @@ final class GetManyAffiliateService
     {
         try {
             $offset = ($this->offsetCalculator)($request->page(), $request->perPage());
+            $filters = ($this->filterListBuilder)($request);
             $paginator = $this->repository->findAllPaginated(
                 $offset,
-                $request->perPage()
+                $request->perPage(),
+                $filters
             );
 
             $totalElements = count($paginator);

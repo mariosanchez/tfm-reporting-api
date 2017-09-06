@@ -6,6 +6,7 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateRepository as AffiliateRepositoryInterface;
 use ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate;
 use \Doctrine\ORM\EntityRepository;
+use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\FilterQueryBuilder;
 
 /**
  * AffiliateRepository
@@ -65,9 +66,10 @@ class AffiliateRepository extends EntityRepository implements AffiliateRepositor
     /**
      * @param int $firstResult
      * @param int $maxResult
+     * @param array $filters
      * @return \Traversable
      */
-    public function findAllPaginated(int $firstResult, int $maxResult): \Traversable
+    public function findAllPaginated(int $firstResult, int $maxResult, array $filters): \Traversable
     {
         $entityManager = $this->getEntityManager();
 
@@ -77,8 +79,9 @@ class AffiliateRepository extends EntityRepository implements AffiliateRepositor
                 FROM ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate a
                 WHERE a.statusId != $statusEnabled";
 
-        $query = $entityManager->createQuery($dql)
-            ->setFirstResult($firstResult)
+        $filterQueryBuilder = new FilterQueryBuilder();
+        $query = $filterQueryBuilder($dql, $filters, $entityManager);
+        $query->setFirstResult($firstResult)
             ->setMaxResults($maxResult);
 
         return new Paginator($query, $fetchJoinCollection = true);

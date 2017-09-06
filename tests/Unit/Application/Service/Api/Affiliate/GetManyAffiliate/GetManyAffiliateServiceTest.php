@@ -9,6 +9,7 @@ use ParkimeterAffiliates\Application\Service\Api\Affiliate\GetManyAffiliate\GetM
 use ParkimeterAffiliates\Application\Service\Api\Affiliate\GetManyAffiliate\GetManyAffiliateService;
 use ParkimeterAffiliates\Domain\Model\Affiliate\Affiliate;
 use ParkimeterAffiliates\Domain\Model\Affiliate\AffiliateRepository;
+use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\AffiliateFilterListBuilder;
 use ParkimeterAffiliates\Infrastructure\Persistence\Repository\Doctrine\Utils\PaginatorOffsetCalculator;
 use ParkimeterAffiliates\Tests\Infrastructure\UnitTestCase;
 use ParkimeterAffiliates\Tests\Stub\AffiliateStub;
@@ -23,6 +24,11 @@ final class GetManyAffiliateServiceTest extends UnitTestCase
     private $offsetCalculator;
 
     /**
+     * @var AffiliateFilterListBuilder
+     */
+    private $filterListBuilder;
+
+    /**
      * @var GetManyAffiliateService
      */
     private $getManyAffiliateService;
@@ -33,16 +39,18 @@ final class GetManyAffiliateServiceTest extends UnitTestCase
 
         $this->affiliateRepository = $this->mock(AffiliateRepository::class);
         $this->offsetCalculator = $this->mock(PaginatorOffsetCalculator::class);
+        $this->filterListBuilder = $this->mock(AffiliateFilterListBuilder::class);
         $this->getManyAffiliateService = new GetManyAffiliateService(
             $this->affiliateRepository,
-            $this->offsetCalculator
+            $this->offsetCalculator,
+            $this->filterListBuilder
         );
     }
 
     /**
      * @test
      */
-    public function itShouldFindAnAffiliateGivenAnAffiliateId()
+    public function itShouldFindAnAffiliateList()
     {
         $affiliate = AffiliateStub::random();
         $affiliate->generateAffiliateKey();
@@ -52,7 +60,7 @@ final class GetManyAffiliateServiceTest extends UnitTestCase
         $perPage = 1;
         $totalElements = 1;
 
-        $request = new GetManyAffiliateRequest($page, $perPage);
+        $request = new GetManyAffiliateRequest($page, $perPage, null);
         $response = new GetManyAffiliateResponse(
             [new GetAffiliateResponse(
                 null,
@@ -68,6 +76,7 @@ final class GetManyAffiliateServiceTest extends UnitTestCase
         );
 
         $this->shouldCalculateOffset();
+        $this->shouldBuildFilterList();
         $this->shouldFindAffiliates($affiliate);
 
         $this->assertEquals($response, ($this->getManyAffiliateService)($request));
@@ -87,6 +96,13 @@ final class GetManyAffiliateServiceTest extends UnitTestCase
     private function shouldCalculateOffset()
     {
         $this->offsetCalculator
+            ->shouldReceive('__invoke')
+            ->once();
+    }
+
+    private function shouldBuildFilterList()
+    {
+        $this->filterListBuilder
             ->shouldReceive('__invoke')
             ->once();
     }
